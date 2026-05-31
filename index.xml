@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Yushuai&#039;s Notes</title>
+      <link>https://notes.breakclouds.com</link>
+      <description>最近的10条笔记 on Yushuai&#039;s Notes</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>C语言</title>
+    <link>https://notes.breakclouds.com/C%E8%AF%AD%E8%A8%80</link>
+    <guid>https://notes.breakclouds.com/C%E8%AF%AD%E8%A8%80</guid>
+    <description><![CDATA[ 用户标识符（变量名、函数名等）必须满足： 只能由字母、数字、下划线组成； 不能以数字开头； 不能是 C 语言的关键字（如 int、float、do、goto 等）。 💡 小提示： C 语言区分大小写，int 是关键字，但 INT 不是； 下划线 _ 可以作为标识符的开头或中间字符，但减号 - 不可以。 C 语言整数常量速查表 这里整理了 C 语言中十进制、八进制、十六进制整数的完整规则，帮你快速区分合法 / 非法写法。 一、三种进制的表示规则 进制前缀合法字符范围示例说明十进制无0~9123、-456最常用的整数表示方式八进制00~7012、-077必须以0开头，数字不能超过 7十六进制0x... ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>001</title>
+    <link>https://notes.breakclouds.com/Differential-equations/001</link>
+    <guid>https://notes.breakclouds.com/Differential-equations/001</guid>
+    <description><![CDATA[ 视频内容专业总结 本视频围绕微分方程的基本概念、物理应用及其深层次含义展开，旨在帮助观众建立完整且深入的理解框架，兼顾大局观与具体实例细节。 关键内容概述 微分方程的重要性 自牛顿以来，物理定律主要通过微分方程表达，这种数学“语言”已经超越物理学领域，成为描述世界变化规律的关键工具。掌握微分方程有助于从全新角度观察自然和社会现象。 微分方程基本类型 常微分方程（ODE）：包含单一自变量（通常为时间），描述有限个变量随时间的变化。 偏微分方程（PDE）：涉及多个自变量，常用于描述空间上连续介质的变化，如固体内部的温度场、流体速度场等。 视频聚焦常微分方程，尤其是描述动态系统时最常见的时间变量情形... ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>LLM-Wiki使用指南</title>
+    <link>https://notes.breakclouds.com/LLM-Wiki%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97</link>
+    <guid>https://notes.breakclouds.com/LLM-Wiki%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97</guid>
+    <description><![CDATA[ LLM Wiki 使用指南 灵感来自 Andrej Karpathy 的 LLM Wiki 模式。由 LLM 替你维护一个结构化、互联互通、持续演进的知识库。 一、这是什么？ 传统的知识管理方式是这样：你收藏一堆文章、论文、笔记，然后某天想找个东西，在文件夹里翻半天，或者用 RAG 工具临时检索。每次提问，AI 都要从零开始拼凑答案。知识没有积累。 LLM Wiki 的做法完全不同： 你负责：收集资料、提出问题、判断方向 LLM 负责：总结、交叉引用、归档、维护一致性 每次你添加一份新资料，LLM 不是简单地索引它，而是把它消化吸收进已有的知识体系中——更新实体页面、修订概念页面、标记新旧矛盾... ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>欢迎来到我的笔记</title>
+    <link>https://notes.breakclouds.com/</link>
+    <guid>https://notes.breakclouds.com/</guid>
+    <description><![CDATA[ 这是我的个人知识库，记录学习、研究与思考。 📂 笔记分类 量子力学 线性代数 积分 C语言 LLM Wiki 🔗 链接 主站 breakclouds.com GitHub . ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://notes.breakclouds.com/wiki/</link>
+    <guid>https://notes.breakclouds.com/wiki/</guid>
+    <description><![CDATA[ Wiki 目录 本文件由 LLM 自动维护，每次摄入新资料后更新。查询时先读此文件定位相关页面。 实体 暂无实体页面。开始摄入资料后，人物、组织、产品等实体将出现在此处。 概念 暂无概念页面。开始摄入资料后，理论、方法、框架等概念将出现在此处。 来源 暂无来源摘要。将文章、论文等放入 raw/ 目录后执行摄入操作即可生成。 其他 overview：知识总览与当前最佳理解 log：操作日志 . ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>log</title>
+    <link>https://notes.breakclouds.com/wiki/log</link>
+    <guid>https://notes.breakclouds.com/wiki/log</guid>
+    <description><![CDATA[ 操作日志 追加式记录，不修改已有条目。记录每次摄入、问答归档、巡检等操作。 [2026-05-11] 初始化 | LLM Wiki 体系搭建 创建了 Wiki 目录结构（wiki/entities/、wiki/concepts/、wiki/sources/） 创建了原始资料目录（raw/、raw/assets/） 编写了 CLAUDE.md 维护规范 创建了 index.md、log.md、overview.md 核心页面 Wiki 正式启用，等待第一份资料的摄入 . ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>overview</title>
+    <link>https://notes.breakclouds.com/wiki/overview</link>
+    <guid>https://notes.breakclouds.com/wiki/overview</guid>
+    <description><![CDATA[ 知识总览 本页面是当前 Wiki 的「当前最佳理解」—— 用自然语言叙述整个知识体系的核心框架。每次摄入重大发现后由 LLM 更新。 当前状态 Wiki 刚刚初始化，尚未摄入任何资料。 知识体系的框架将随着资料的不断摄入逐步浮现。每当你添加一篇新文章、一本书的章节、一期播客笔记，“当前最佳理解”都会随之演化。 如何使用本页面 这是一个活的页面，随着新知识的加入而不断修订。 每一段论断都应有 [[来源 - xxx]] 链接作为支撑。 如果新证据推翻旧论断，旧论断应该被划掉（像这样）而非删除，以保留认知演化的痕迹。 开始你的第一份摄入吧——把一篇感兴趣的文章放入 raw/，然后对我说「摄入 raw... ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>未命名 1</title>
+    <link>https://notes.breakclouds.com/%E5%AD%A6%E4%B8%9A/%E6%9C%AA%E5%91%BD%E5%90%8D-1</link>
+    <guid>https://notes.breakclouds.com/%E5%AD%A6%E4%B8%9A/%E6%9C%AA%E5%91%BD%E5%90%8D-1</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>Claude Code零基础系统教程的完整讲解</title>
+    <link>https://notes.breakclouds.com/%E5%B7%A5%E5%85%B7%E3%80%81/Claude-Code%E9%9B%B6%E5%9F%BA%E7%A1%80%E7%B3%BB%E7%BB%9F%E6%95%99%E7%A8%8B%E7%9A%84%E5%AE%8C%E6%95%B4%E8%AE%B2%E8%A7%A3</link>
+    <guid>https://notes.breakclouds.com/%E5%B7%A5%E5%85%B7%E3%80%81/Claude-Code%E9%9B%B6%E5%9F%BA%E7%A1%80%E7%B3%BB%E7%BB%9F%E6%95%99%E7%A8%8B%E7%9A%84%E5%AE%8C%E6%95%B4%E8%AE%B2%E8%A7%A3</guid>
+    <description><![CDATA[ notegpt.io/share/6ffbd4524 [00:00:00] 本视频为Claude Code零基础系统教程的完整讲解。内容涵盖从安装Git、VSCode和Claude Code，到如何绕过模型限制，介绍界面和权限系统，最终掌握tools工具、hooks钩子、skills技能、subagent子智能体以及自动化执行等核心功能。课程采用理论与实操结合的方式，目标是让用户能用Claude Code完成日常工作和项目开发。视频主讲人木子强调：不制造焦虑，提供AI时代解决方案。 [00:01:14] Git的安装与作用介绍 Git是代码版本管理工具，类似AI编程过程中的“后悔药”，能帮助回... ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item><item>
+    <title>文字转手写</title>
+    <link>https://notes.breakclouds.com/%E5%B7%A5%E5%85%B7%E3%80%81/%E6%96%87%E5%AD%97%E8%BD%AC%E6%89%8B%E5%86%99</link>
+    <guid>https://notes.breakclouds.com/%E5%B7%A5%E5%85%B7%E3%80%81/%E6%96%87%E5%AD%97%E8%BD%AC%E6%89%8B%E5%86%99</guid>
+    <description><![CDATA[ 通过在线生成器或设计软件即可将文字转换为手写效果 要将纯文本生成的具有真实感的手写板效果，最快捷的方法是使用专门的“手写模拟器”或“手写字体生成器”。这些工具不仅能更换字体，还能模拟手写时的笔迹抖动、行高偏移以及纸张背景，使最终生成的图片看起来像是在真实的笔记本或信纸上书写的一样。 推荐的在线生成工具 如果你需要快速生成手写文稿，以下几款工具是目前主流的选择： 萝卜工坊 (BeautifulCarrot)​：功能非常全面，支持方格纸、作文纸、信纸等多种背景。它能自动匹配纸张方格，并模拟真实的笔迹变化，甚至可以合成手写稿照片，非常适合需要模拟抄写任务的场景。 萝卜工坊官网 凹凸工坊 (AutoH... ]]></description>
+    <pubDate>Sun, 31 May 2026 03:51:01 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

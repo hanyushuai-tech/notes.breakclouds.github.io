@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>Claude Code零基础系统教程的完整讲解</title><meta charset="utf-8"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Yushuai's Notes"/><meta property="og:title" content="Claude Code零基础系统教程的完整讲解"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Claude Code零基础系统教程的完整讲解"/><meta name="twitter:description" content="notegpt.io/share/6ffbd4524 [00:00:00] 本视频为Claude Code零基础系统教程的完整讲解。内容涵盖从安装Git、VSCode和Claude Code，到如何绕过模型限制，介绍界面和权限系统，最终掌握tools工具、hooks钩子、skills技能、subagent子智能体以及自动化执行等核心功能。课程采用理论与实操结合的方式，目标是让用户能用Claude Code完成日常工作和项目开发。视频主讲人木子强调：不制造焦虑，提供AI时代解决方案。 [00:01:14] Git的安装与作用介绍 Git是代码版本管理工具，类似AI编程过程中的“后悔药”，能帮助回..."/><meta property="og:description" content="notegpt.io/share/6ffbd4524 [00:00:00] 本视频为Claude Code零基础系统教程的完整讲解。内容涵盖从安装Git、VSCode和Claude Code，到如何绕过模型限制，介绍界面和权限系统，最终掌握tools工具、hooks钩子、skills技能、subagent子智能体以及自动化执行等核心功能。课程采用理论与实操结合的方式，目标是让用户能用Claude Code完成日常工作和项目开发。视频主讲人木子强调：不制造焦虑，提供AI时代解决方案。 [00:01:14] Git的安装与作用介绍 Git是代码版本管理工具，类似AI编程过程中的“后悔药”，能帮助回..."/><meta property="og:image:alt" content="notegpt.io/share/6ffbd4524 [00:00:00] 本视频为Claude Code零基础系统教程的完整讲解。内容涵盖从安装Git、VSCode和Claude Code，到如何绕过模型限制，介绍界面和权限系统，最终掌握tools工具、hooks钩子、skills技能、subagent子智能体以及自动化执行等核心功能。课程采用理论与实操结合的方式，目标是让用户能用Claude Code完成日常工作和项目开发。视频主讲人木子强调：不制造焦虑，提供AI时代解决方案。 [00:01:14] Git的安装与作用介绍 Git是代码版本管理工具，类似AI编程过程中的“后悔药”，能帮助回..."/><meta property="og:image" content="https://notes.breakclouds.com/static/og-image.png"/><meta property="og:image:url" content="https://notes.breakclouds.com/static/og-image.png"/><meta name="twitter:image" content="https://notes.breakclouds.com/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="notes.breakclouds.com"/><meta property="og:url" content="https://notes.breakclouds.com/工具、/Claude-Code零基础系统教程的完整讲解"/><meta property="twitter:url" content="https://notes.breakclouds.com/工具、/Claude-Code零基础系统教程的完整讲解"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="notegpt.io/share/6ffbd4524 [00:00:00] 本视频为Claude Code零基础系统教程的完整讲解。内容涵盖从安装Git、VSCode和Claude Code，到如何绕过模型限制，介绍界面和权限系统，最终掌握tools工具、hooks钩子、skills技能、subagent子智能体以及自动化执行等核心功能。课程采用理论与实操结合的方式，目标是让用户能用Claude Code完成日常工作和项目开发。视频主讲人木子强调：不制造焦虑，提供AI时代解决方案。 [00:01:14] Git的安装与作用介绍 Git是代码版本管理工具，类似AI编程过程中的“后悔药”，能帮助回..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRTpcXENsYXVkZUNvZGVcXG9ic2lkaWFuLXNpdGVcXHF1YXJ0elxcY29tcG9uZW50c1xcc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://notes.breakclouds.com/index.xml"/></head><body data-slug="工具、/Claude-Code零基础系统教程的完整讲解"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Yushuai's Notes</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索些什么" placeholder="搜索些什么"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-63"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-63" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../工具、/">工具、</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Claude Code零基础系统教程的完整讲解</a></div></nav><h1 class="article-title">Claude Code零基础系统教程的完整讲解</h1><p show-comma="true" class="content-meta"><time datetime="2026-05-31T03:51:01.000Z">2026年5月31日</time><span>15分钟阅读</span></p></div></div><article class="popover-hint"><p><a href="https://notegpt.io/share/6ffbd4524" class="external">https://notegpt.io/share/6ffbd4524<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>[00:00:00] <strong>本视频为Claude Code零基础系统教程的完整讲解</strong>。内容涵盖从<strong>安装Git、VSCode和Claude Code</strong>，到如何绕过模型限制，介绍界面和权限系统，最终掌握tools工具、hooks钩子、skills技能、subagent子智能体以及自动化执行等核心功能。课程采用理论与实操结合的方式，目标是让用户能用Claude Code完成日常工作和项目开发。视频主讲人木子强调：<strong>不制造焦虑，提供AI时代解决方案</strong>。</p>
+<hr/>
+<p>[00:01:14] <strong>Git的安装与作用介绍</strong></p>
+<ul>
+<li>Git是代码版本管理工具，类似AI编程过程中的“后悔药”，能帮助回退错误版本，查看代码差异。</li>
+<li>Git不是给人直接操作的，而是供AI自动使用。</li>
+<li>安装方法：
+<ul>
+<li>Windows用户下载安装包，官网地址可通过搜索“git install”获得。</li>
+<li>macOS用户通过终端命令安装（需要先安装Homebrew）。</li>
+</ul>
+</li>
+<li>安装完成后，即可进行版本控制。</li>
+</ul>
+<hr/>
+<p>[00:02:24] <strong>VSCode安装与功能介绍</strong></p>
+<ul>
+<li>VSCode提供图形化界面，显示文件树和代码，同时内置终端用以与Claude Code对话，操作更便捷。</li>
+<li>没有VSCode时，只能用纯命令行，体验较差。</li>
+<li>安装方式：到VSCode官网下载安装包，Windows双击安装，macOS拖拽安装。</li>
+<li>初次打开可跳过登录，安装完成后即可使用。</li>
+</ul>
+<hr/>
+<p>[00:03:36] <strong>Claude Code安装及模型切换</strong></p>
+<ul>
+<li>在Claude Code官网复制命令行，粘贴至终端可一键安装。</li>
+<li>Claude Code支持Anthropic Claude模型，也支持其他厂商模型，解决部分用户因限制无法使用Claude模型的问题。</li>
+<li>介绍两个开源项目：<strong>CC switch</strong>和<strong>claudecode Router</strong>，用于模型切换。</li>
+<li>以CC switch为例演示安装和添加其他模型（如minimax），通过输入API key启用新模型，Claude Code即切换至该模型。</li>
+</ul>
+<hr/>
+<p>[00:06:06] <strong>Claude Code终端界面详解</strong></p>
+<ul>
+<li>通过VSCode打开终端，输入<code>claudecode</code>启动Claude Code。</li>
+<li>界面包含：
+<ul>
+<li>右上角显示版本号、当前使用模型及推理强度。</li>
+<li>状态栏显示当前对话消耗的TOKEN数量、上下文使用比例及订阅额度（时间和天数）。</li>
+<li>Claude Code自动展示思考过程和工作信息，包括调用的技能（skill）、写入文件等。</li>
+</ul>
+</li>
+<li>TOKEN消耗统计为累计值，帮助用户监控使用量。</li>
+</ul>
+<hr/>
+<p>[00:11:20] <strong>Claude Code图形化操作界面介绍</strong></p>
+<ul>
+<li>通过VSCode左边栏安装“claudecode”插件后，右边栏弹出聊天界面。</li>
+<li>功能按钮：
+<ul>
+<li>放大按钮：全屏显示。</li>
+<li>历史按钮：查看对话历史。</li>
+<li>加号按钮：新建对话线程。</li>
+</ul>
+</li>
+<li>对话框支持上传文件、添加上下文（@文件名）以便与Claude Code交互文件内容。</li>
+<li>文件被添加到上下文后，Claude Code能读取、修改文件，实现代码协同编辑。</li>
+<li>斜杠按钮可调出所有命令，等同于终端内命令。</li>
+<li>权限系统包含四种模式：
+<ol>
+<li><strong>Plan Mode（计划模式）</strong>：仅制定计划，不修改文件。</li>
+<li><strong>Ask Before Edit（默认模式）</strong>：修改前需用户同意。</li>
+<li><strong>Edit Automatically（自动编辑）</strong>：自动同意编辑命令，但部分命令仍需确认。</li>
+<li><strong>Bypass Permissions（权限全开）</strong>：完全自动执行，无需确认，风险最大。</li>
+</ol>
+</li>
+</ul>
+<hr/>
+<p>[00:15:18] <strong>权限模式实操示例</strong></p>
+<ul>
+<li>在Plan Mode下让Claude Code制定个人博客开发计划，但不执行。</li>
+<li>切换至Ask Before Edit模式，执行过程中每次文件操作需用户确认。</li>
+<li>可临时授权本次会话自动编辑，切换至Edit Automatically模式。</li>
+<li>某些特殊命令（如<code>open</code>）在自动模式下仍需确认，可通过设置或终端命令启用Bypass Permissions模式实现完全自动化。</li>
+</ul>
+<hr/>
+<p>[00:20:07] <strong>Tools工具概念及调用流程</strong></p>
+<ul>
+<li>大模型本身只能推理、生成文本，不能直接操作环境（如修改文件、创建文件夹）。</li>
+<li>Tools是具体执行代码的“手”，负责实际修改项目文件或执行命令。</li>
+<li>Claude Code会解析大模型的输出，调用相应工具完成任务。</li>
+<li>内置工具示例：写入文件（write）、网络搜索、网络抓取、终端命令执行（bash）等。</li>
+<li>通过示例演示将网页主题颜色从红色改为绿色的过程，工具调用清晰可见。</li>
+</ul>
+<hr/>
+<p>[00:22:44] <strong>Hooks钩子功能介绍</strong></p>
+<ul>
+<li>Hooks是程序运行关键节点的“挂钩”，允许插入自定义逻辑，对智能体执行过程进行监督和控制。</li>
+<li>常见钩子节点包括：任务结束前（stop）、子智能体结束前（sub agent stop）、工具调用前后（pre to use/post to use）、调用工具失败后等。</li>
+<li>作用示例：
+<ul>
+<li>任务结束前检查代码是否完成测试，未完成则继续工作。</li>
+<li>子智能体结束时汇报操作文件列表，确认任务完成。</li>
+<li>调用工具后自动格式化代码、运行测试。</li>
+</ul>
+</li>
+<li>创建钩子可通过自然语言指令完成，系统自动生成对应配置文件。</li>
+</ul>
+<hr/>
+<p>[00:26:17] <strong>Hooks实操示例</strong></p>
+<ul>
+<li>创建一个stop钩子，确保代码改动有测试且无未完成待办，否则不允许结束任务。</li>
+<li>钩子生效后，每次任务结束前自动执行验收逻辑，保障代码质量。</li>
+</ul>
+<hr/>
+<p>[00:27:28] <strong>Skills技能介绍与示例</strong></p>
+<ul>
+<li>Skills是为特定任务（如制作PPT）封装的能力包，包含提示词、流程步骤及辅助资源（代码、参考资料）。</li>
+<li>结构上是一个文件夹，核心是<code>taskskill.md</code>文件，定义任务触发条件、执行流程及输出格式。</li>
+<li>官方示例：PPTX技能，支持PPT生成与编辑，内部包含多个Markdown文件及脚本，规范操作流程及设计规范。</li>
+<li>用户可自定义skills，打包特定任务流程。</li>
+<li>通过自然语言创建skill示例：自动调研并生成PPT的流程。</li>
+</ul>
+<hr/>
+<p>[00:32:22] <strong>Plugin插件概念</strong></p>
+<ul>
+<li>Plugin是skills、hooks和MCP Server（连接外部工具和数据源的API集合）的组合。</li>
+<li>作用是赋予Claude Code扩展能力，如视频生成、邮件处理、数据读取等。</li>
+<li>插件中的skills定义任务流程，hooks监管关键节点，MCP Server提供外部数据接口。</li>
+<li>管理插件命令<code>/plugin</code>可查看已安装及可安装插件列表。</li>
+<li>示例插件：front end design，默认安装，主要包含简单skill。</li>
+</ul>
+<hr/>
+<p>[00:34:38] <strong>Subagent子智能体介绍与创建</strong></p>
+<ul>
+<li>Agent是能独立执行任务、为用户决策和行动的智能体，区别于单纯聊天机器人。</li>
+<li>Subagent是主智能体派出的辅助智能体，拥有独立上下文和权限，负责特定子任务，结果汇报主智能体。</li>
+<li>多个子智能体可并行执行，互不干扰。</li>
+<li>创建子智能体两种方法：直接对话创建，或终端命令<code>_agents</code>逐步创建。</li>
+<li>创建时需选择作用范围（项目级或个人级）、使用工具权限、模型及记忆存储策略。</li>
+<li>实例：创建一个负责信息搜索及交叉验证的子智能体，并展示其文件结构和记忆管理。</li>
+</ul>
+<hr/>
+<p>[00:40:45] <strong>自动化任务调度</strong></p>
+<ul>
+<li>使用<code>_schedule</code>命令创建定时任务，如每天8点自动调用子智能体搜索并验证前一天的AI新闻。</li>
+<li>自动化任务在云端运行，非本地执行。</li>
+<li>云端任务执行依赖于模型订阅，非Claude模型用户自动化功能受限。</li>
+<li>任务界面显示激活状态及运行历史，方便监控。</li>
+</ul>
+<hr/>
+<p>[00:42:02] <strong>综合应用示例：网页AI APP开发</strong></p>
+<ul>
+<li>选择并安装Superpowers插件，内置开发最佳实践，支持需求讨论、计划制定、分批执行及代码审查。</li>
+<li>通过自然语言描述创建“AI hook club”文案生成网页APP，支持用户输入主题，选择平台和内容类型，自动生成10个不同风格的爆款开头文案。</li>
+<li>Superpowers先进行产品和技术头脑风暴，细化需求，确认语言、模型、输出方式、风格多样性等。</li>
+<li>设计阶段可以调整技术方案和页面布局。</li>
+<li>确认需求后，调用writing plans技能生成详细开发计划。</li>
+<li>两种开发执行模式：
+<ol>
+<li>子智能体驱动，任务分发给子智能体并行执行，主智能体审查。</li>
+<li>主智能体单独对话执行，支持实时交互。</li>
+</ol>
+</li>
+<li>选择子智能体驱动模式，Claude Code自动完成开发任务。</li>
+<li>本地运行时需配置Deepseek API key以启用AI功能。</li>
+</ul>
+<hr/>
+<p>[00:48:45] <strong>APP功能验收</strong></p>
+<ul>
+<li>在浏览器地址访问本地运行的APP。</li>
+<li>测试生成10个不同视频开头，支持复制、收藏和查看历史，功能完整且稳定。</li>
+</ul>
+<hr/>
+<p>[00:50:02] <strong>Claude文件夹结构与说明</strong></p>
+<ul>
+<li><code>claudecode</code>根目录下的<code>claude</code>文件夹管理所有扩展能力：
+<ul>
+<li><strong>agents</strong>：子智能体定义及配置。</li>
+<li><strong>agent memory</strong>：子智能体持久记忆。</li>
+<li><strong>skills</strong>：各种技能包，包括官方及自定义技能。</li>
+<li><strong>plugins</strong>：项目级插件（若有）。</li>
+</ul>
+</li>
+<li><code>claude.md</code>文件为项目说明书，定义项目技术栈、运行方式、限制及风格偏好等。</li>
+<li><code>claude.md</code>每次Claude Code工作时会作为软性上下文导入，优化任务执行效率和准确性。</li>
+</ul>
+<hr/>
+<p>[00:51:18] <strong>claude.md文件内容及作用</strong></p>
+<ul>
+<li>自动生成命令<code>_init</code>可扫描项目代码自动生成该文件。</li>
+<li>包含项目架构、API配置、运行指令及注意事项。</li>
+<li>与hooks不同，claude.md提供软性规则，简洁且可自定义。</li>
+</ul>
+<hr/>
+<p>[00:52:23] <strong>总结与后续计划</strong></p>
+<ul>
+<li>本视频覆盖了Claude Code主要功能模块：安装配置、权限系统、工具调用、钩子监督、技能封装、插件扩展、子智能体管理及自动化调度。</li>
+<li>部分高级功能（如自动化任务和Claude模型订阅相关）因权限限制未展开。</li>
+<li>未来可提供更完整的AI APP制作教程，涵盖前后端开发、登录、部署及上线。</li>
+<li>主讲鼓励关注，期待用户反馈与后续学习。</li>
+</ul>
+<hr/>
+<h3 id="关键词">关键词<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#关键词" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Claude Code</li>
+<li>Git版本管理</li>
+<li>VSCode图形界面</li>
+<li>多模型支持（Claude、minimax、Deepseek等）</li>
+<li>权限系统（Plan Mode, Ask Before Edit, Edit Automatically, Bypass Permissions）</li>
+<li>Tools工具（写入、读取、终端命令等）</li>
+<li>Hooks钩子（任务结束前、工具调用前后等）</li>
+<li>Skills技能（任务能力包）</li>
+<li>Plugins插件（skills+hooks+MCP Server）</li>
+<li>Subagent子智能体（独立上下文助手）</li>
+<li>自动化调度（云端定时任务）</li>
+<li>Superpowers插件（开发流程管理）</li>
+<li>claude.md（项目说明文件）</li>
+</ul>
+<hr/>
+<h3 id="关键结论">关键结论<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#关键结论" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Claude Code是一个强大且灵活的AI开发辅助平台，支持多模型接入与切换。</strong></li>
+<li><strong>完善的权限系统保障安全与灵活性，满足不同用户需求。</strong></li>
+<li><strong>工具、钩子和技能体系构成了智能体高效协同工作的基础。</strong></li>
+<li><strong>子智能体和自动化调度提升任务执行效率，适合复杂项目管理。</strong></li>
+<li><strong>插件机制支持功能扩展，实现多样化应用场景。</strong></li>
+<li><strong>claude.md文件有助于统一项目规则，提升智能体工作准确性。</strong></li>
+<li><strong>Superpowers插件为开发流程提供最佳实践，降低开发门槛。</strong></li>
+</ul>
+<p>以上内容严格基于视频原文，全面系统地总结了Claude Code的安装、使用、功能和实际项目开发流程。</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-21" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#关键词" data-for="关键词">关键词</a></li><li class="depth-0"><a href="#关键结论" data-for="关键结论">关键结论</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://breakclouds.com">主站 breakclouds.com</a></li><li><a href="https://github.com/hanyushuai-tech">GitHub</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript.js" type="module" data-persist="true"></script></html>

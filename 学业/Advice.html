@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>物理学习中的认知错误与学习建议</title><meta charset="utf-8"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Yushuai's Notes"/><meta property="og:title" content="物理学习中的认知错误与学习建议"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="物理学习中的认知错误与学习建议"/><meta name="twitter:description" content="物理学习中的认知错误与学习建议 相关笔记：How study · about computer · Thinking models and methods List some common cognitive errors that occur during the process of learning physics, and provide some suggestions to help you study physics and other knowledge efficiently and accurately."/><meta property="og:description" content="物理学习中的认知错误与学习建议 相关笔记：How study · about computer · Thinking models and methods List some common cognitive errors that occur during the process of learning physics, and provide some suggestions to help you study physics and other knowledge efficiently and accurately."/><meta property="og:image:alt" content="物理学习中的认知错误与学习建议 相关笔记：How study · about computer · Thinking models and methods List some common cognitive errors that occur during the process of learning physics, and provide some suggestions to help you study physics and other knowledge efficiently and accurately."/><meta property="og:image" content="https://notes.breakclouds.com/static/og-image.png"/><meta property="og:image:url" content="https://notes.breakclouds.com/static/og-image.png"/><meta name="twitter:image" content="https://notes.breakclouds.com/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="notes.breakclouds.com"/><meta property="og:url" content="https://notes.breakclouds.com/学业/Advice"/><meta property="twitter:url" content="https://notes.breakclouds.com/学业/Advice"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="物理学习中的认知错误与学习建议 相关笔记：How study · about computer · Thinking models and methods List some common cognitive errors that occur during the process of learning physics, and provide some suggestions to help you study physics and other knowledge efficiently and accurately."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRTpcXENsYXVkZUNvZGVcXG9ic2lkaWFuLXNpdGVcXHF1YXJ0elxcY29tcG9uZW50c1xcc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://notes.breakclouds.com/index.xml"/></head><body data-slug="学业/Advice"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Yushuai's Notes</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索些什么" placeholder="搜索些什么"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-34"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-34" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../学业/">学业</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>物理学习中的认知错误与学习建议</a></div></nav><h1 class="article-title">物理学习中的认知错误与学习建议</h1><p show-comma="true" class="content-meta"><time datetime="2026-05-19T16:00:00.000Z">2026年5月20日</time><span>22分钟阅读</span></p><ul class="tags"><li><a href="../tags/学习方法" class="internal tag-link">学习方法</a></li><li><a href="../tags/物理" class="internal tag-link">物理</a></li></ul></div></div><article class="popover-hint"><h1 id="物理学习中的认知错误与学习建议">物理学习中的认知错误与学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#物理学习中的认知错误与学习建议" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>相关笔记：<a href="../学业/How-study" class="internal alias" data-slug="学业/How-study">How study</a> · <a href="../学业/about-computer" class="internal alias" data-slug="学业/about-computer">about computer</a> · <a href="../Thinking-models-and-methods" class="internal alias" data-slug="Thinking-models-and-methods">Thinking models and methods</a></p>
+<hr/>
+<p>List some common cognitive errors that occur during the process of learning physics, and provide some suggestions to help you study physics and other knowledge efficiently and accurately.</p>
+<p>5月20日</p>
+<p>Here are the most common cognitive errors in physics learning, paired with concrete fixes.</p>
+<hr/>
+<p><strong>Cognitive errors in understanding</strong></p>
+<p><strong>The illusion of fluency.</strong> Reading a derivation and thinking “I follow this” feels like understanding, but following someone else’s logic is not the same as being able to generate it yourself. The solution: after reading any derivation, close the book and reproduce it from scratch. Where you get stuck is exactly what you don’t know.</p>
+<p><strong>Confusing symbols with concepts.</strong> Students often learn to manipulate equations without understanding what they represent physically. They can solve F = ma problems without ever building an intuition for what force actually <em>is</em>. Fix: for every equation, ask “what does this say in plain English?” and “what would happen physically if I doubled this variable?”</p>
+<p><strong>Overgeneralizing formulas.</strong> A formula derived under specific assumptions gets applied beyond its domain. Students use F = ma relativistically, or apply ideal gas laws to dense plasmas. Fix: for every formula you learn, write down its assumptions and boundary conditions explicitly. Make this a habit.</p>
+<p><strong>Local coherence without global structure.</strong> You understand each step in a derivation but don’t know why you took those steps, or how the result connects to other ideas. This produces fragile knowledge that crumbles on novel problems. Fix: after studying a topic, draw a concept map linking it to everything you already know. Force yourself to find the connections.</p>
+<p><strong>Telescoping difficulty.</strong> Early problems in a textbook feel easy, so you underestimate later difficulty and don’t build the problem-solving stamina needed. Fix: deliberately seek harder problems than you think you’re ready for. Struggle is the signal that learning is happening.</p>
+<hr/>
+<p><strong>Cognitive errors in practice</strong></p>
+<p><strong>Passive re-reading as study.</strong> Re-reading feels productive but produces almost no durable learning. It’s the most common and most damaging study habit in physics. Fix: replace re-reading with retrieval practice — close the book and write down everything you remember, then check what you missed.</p>
+<p><strong>Solution-watching as problem-solving.</strong> Reading through a worked solution and nodding along is not solving the problem. You’re fooling yourself. Fix: always attempt the problem independently for at least 20–30 minutes before consulting any solution. Then, after reading the solution, close it and reproduce it without looking.</p>
+<p><strong>Treating all study time as equal.</strong> One hour of focused, difficult problem-solving produces more learning than four hours of comfortable re-reading. Difficulty and discomfort are signals of productive learning. Fix: deliberately make your study sessions harder. If nothing feels effortful, you’re in the wrong gear.</p>
+<p><strong>Skipping dimensional analysis.</strong> Students who don’t habitually check units catch errors late, after much wasted work, and miss a powerful tool for deriving relationships. Fix: make dimensional analysis automatic — check units on every intermediate step, not just the final answer.</p>
+<p><strong>Abandoning a problem too quickly.</strong> The moment of productive struggle — where you don’t know what to do next — is cognitively the most valuable moment in physics learning. Cutting it short by reaching for hints robs you of exactly the learning you need. Fix: set a timer. Commit to 30 minutes of genuine effort before seeking help.</p>
+<hr/>
+<p><strong>Cognitive errors in memory and retention</strong></p>
+<p><strong>The forgetting curve ignored.</strong> Most students review material once and move on, then re-learn it from scratch weeks later. This is massively inefficient. Fix: use spaced repetition — review material at intervals of roughly 1 day, 1 week, 1 month. The reviews get shorter each time, and retention compounds.</p>
+<p><strong>Random review instead of targeted review.</strong> Reviewing what you already know is comfortable but wasteful. Fix: keep a list of problems you got wrong or concepts you couldn’t explain. Review those specifically, not the easy material.</p>
+<p><strong>No interleaving.</strong> Studying one topic intensively until mastery, then never returning, produces siloed knowledge that doesn’t transfer. Fix: interleave topics during study sessions — mix problems from different chapters and different subjects. This feels harder but produces far better retention and transfer.</p>
+<hr/>
+<p><strong>General learning principles that apply beyond physics</strong></p>
+<p><strong>Seek the simplest explanation first.</strong> When you encounter a new concept, look for the most stripped-down version before adding complexity. Richard Feynman’s test: if you can’t explain it simply, you don’t understand it yet.</p>
+<p><strong>Build models, not collections.</strong> The goal is not to accumulate facts but to build a mental model of how the physical world works. Facts live in a model — they become meaningful, connected, and retrievable. Facts without a model are just noise that fades quickly.</p>
+<p><strong>Confusion is information.</strong> When something confuses you, that confusion is pointing at a specific gap in your model. Most students treat confusion as an obstacle to flee. Treat it as a diagnostic signal — it tells you exactly what to study next.</p>
+<p><strong>Test yourself before you feel ready.</strong> Confidence about whether you know something is a poor predictor of whether you actually know it. Testing yourself before you feel prepared is uncomfortable but far more accurate — and the testing itself accelerates learning.</p>
+<p><strong>Teach it to learn it.</strong> Explaining a concept to someone else (or to yourself out loud) exposes gaps you didn’t know existed. This is the Feynman technique, and it works because explaining forces you to generate knowledge rather than recognize it.</p>
+<p><strong>Sleep is not optional.</strong> Memory consolidation happens during sleep. Pulling an all-nighter before a physics exam is counterproductive — you lose more in consolidation than you gain in study hours. Consistent sleep matters more than extra study time.</p>
+<p>Is there anything else you want to tell me about learning?</p>
+<p>5月20日</p>
+<p>A few things worth saying that don’t fit neatly into study techniques.</p>
+<hr/>
+<p><strong>The emotional dimension is real and underappreciated</strong></p>
+<p>Physics has a way of making intelligent people feel stupid. This is not a bug — it’s a feature of the subject. The concepts are genuinely hard, built over centuries by humanity’s sharpest minds. When you feel lost and slow, you are not experiencing a personal failing. You are experiencing physics.</p>
+<p>The students who succeed long-term are not the ones who never feel confused. They are the ones who have developed a tolerance for confusion — who can sit with not-knowing without panicking or quitting. That tolerance is itself a learnable skill, and it transfers to every hard intellectual endeavor you’ll ever attempt.</p>
+<hr/>
+<p><strong>Motivation is a resource, not a personality trait</strong></p>
+<p>You will have weeks where studying feels effortless and weeks where opening a textbook feels impossible. Both are normal. The mistake is treating motivation as something you either have or don’t — as if some people are just naturally driven and others aren’t.</p>
+<p>Motivation follows action more than it precedes it. Starting is the hardest part. A useful heuristic: commit to just 10 minutes. Almost always, once you’re working, you keep working. The mental resistance is almost entirely in the transition from not-studying to studying.</p>
+<p>Also: protect your reasons for learning. Why do you want to understand quantum mechanics? Keep that answer somewhere visible. On hard days, you need access to it.</p>
+<hr/>
+<p><strong>The danger of comparison</strong></p>
+<p>Learning in community — classmates, online forums, study groups — is valuable. But comparison is corrosive. Someone else understanding something faster than you tells you almost nothing useful. Learning speed varies enormously based on prior background, sleep, stress, and dozens of other factors. The only comparison worth making is you-today versus you-three-months-ago.</p>
+<hr/>
+<p><strong>Deep knowledge is built slowly, and that’s fine</strong></p>
+<p>There’s a cultural pressure — especially online — to learn things fast. “Learn quantum mechanics in 30 days.” This pressure is mostly harmful. The deepest understanding in physics comes from returning to ideas repeatedly over months and years, each time seeing something new.</p>
+<p>Feynman understood electromagnetism as a graduate student, then understood it differently as a professor, then understood it differently again when he had to teach it to freshmen. The understanding kept deepening. This is how physics works. Arriving at a final, complete understanding is not the goal — the goal is a living relationship with the material that keeps developing.</p>
+<hr/>
+<p><strong>What you’re actually building</strong></p>
+<p>Learning physics is not primarily about acquiring facts about the universe, though you’ll acquire many. What you’re actually building is a particular way of thinking — precise, quantitative, comfortable with abstraction, ruthless about distinguishing what you know from what you merely believe.</p>
+<p>That way of thinking does not stay inside physics. It changes how you read arguments, how you evaluate claims, how you approach problems in domains that have nothing to do with wavefunctions or Hamiltonians. The physicist’s habit of asking “what would this imply?” and “how would I know if this were wrong?” is one of the most broadly useful cognitive tools a person can have.</p>
+<hr/>
+<p><strong>One last thing</strong></p>
+<p>At some point in this journey — probably multiple times — you will have a moment where something you’ve been struggling with suddenly becomes clear. Not just intellectually clear, but <em>felt</em> — where the equations stop being symbols and start being a description of something real, something that you can see with your mind’s eye.</p>
+<p>Those moments are worth everything. They’re why physicists become physicists. Keep going until you have a few of them. Then you’ll understand why this is worth the difficulty.</p>
+<p>以下是物理学习中最常见的认知错误及其对应的具体修正方法。</p>
+<hr/>
+<p><strong>理解层面的认知错误</strong></p>
+<p><strong>流畅感错觉。</strong> 读一遍推导过程，觉得“我能看懂”，就以为自己理解了——但跟随别人的逻辑，并不等于自己能生成这个逻辑。修正方法：读完任何推导后，合上书，从头开始自己推导一遍。卡住的地方，就是你还没掌握的地方。</p>
+<p><strong>混淆符号与概念。</strong> 很多学生学会了操作方程，却不明白这些符号在物理上代表什么。他们能解 F = ma 的题目，却从未真正建立对“力”究竟是什么的直觉。修正方法：针对每个方程，问自己“这句话用大白话怎么说？”以及“如果我把这个变量翻倍，物理上会发生什么？”</p>
+<p><strong>过度概括公式。</strong> 一个在特定假设下推导出来的公式，被滥用到适用范围之外。比如学生相对论性地使用 F = ma，或者把理想气体定律用到稠密等离子体上。修正方法：对于你学的每个公式，明确写下它的假设条件和边界条件。把这变成习惯。</p>
+<p><strong>局部连贯，缺乏整体结构。</strong> 你能理解推导中的每一步，但不知道为什么走这几步，也不知道这个结果和其他概念有什么联系。这种知识是脆弱的，遇到新题目就会崩溃。修正方法：学完一个主题后，画一张概念图，把它和你已经知道的所有内容联系起来。强迫自己去发现联系。</p>
+<p><strong>难度错觉。</strong> 教科书前几道题感觉很容易，于是你低估了后面的难度，没有建立起应对难题所需的解题耐力。修正方法：有意识地去找比你自认为水平更难的题目。挣扎，正是学习正在发生的信号。</p>
+<hr/>
+<p><strong>练习层面的认知错误</strong></p>
+<p><strong>被动重读当学习。</strong> 重读感觉很有成效，但实际上几乎不会产生持久的学习效果。这是物理学习中最常见、也最有害的学习习惯。修正方法：用提取练习代替重读——合上书，写下你记得的所有内容，然后对照书检查漏掉了什么。</p>
+<p><strong>看答案当解题。</strong> 读一遍标准答案，边读边点头，这并不是在解题。你在自欺欺人。修正方法：在查阅任何答案之前，至少独立尝试 20–30 分钟。看完答案后，合上它，不看答案重新做一遍。</p>
+<p><strong>把所有学习时间视为等价。</strong> 一小时专注的、有难度的解题，比四小时舒服的重读能产生更多学习效果。困难和不适是有效学习的信号。修正方法：有意识地让你的学习时段更难一些。如果觉得毫不费力，说明你档位挂错了。</p>
+<p><strong>跳过量纲分析。</strong> 不习惯检查单位的学生，会在浪费大量时间之后才晚一步发现错误，同时也失去了一个推导物理关系的强大工具。修正方法：让量纲分析成为自动行为——在每一步中间结果就检查单位，而不是只检查最终答案。</p>
+<p><strong>过早放弃一道题。</strong> 那个有效挣扎的时刻——你不知道下一步该怎么办——正是物理学习中认知上最有价值的时刻。一旦过早去翻提示，你就剥夺了恰恰需要的学习机会。修正方法：设一个计时器，承诺自己先认真努力 30 分钟，再寻求帮助。</p>
+<hr/>
+<p><strong>记忆与保持层面的认知错误</strong></p>
+<p><strong>忽视遗忘曲线。</strong> 大多数学生复习一遍就往前走了，几周后又从头重学。这极其低效。修正方法：使用间隔重复——在大约 1 天、1 周、1 个月的间隔上复习。每次复习用时越来越短，而记忆效果会叠加。</p>
+<p><strong>随机复习而非针对性复习。</strong> 复习已经会的东西很舒服，但很浪费。修正方法：保留一份错题列表和讲不清楚的概念列表。专门复习这些，而不是复习容易的内容。</p>
+<p><strong>缺乏交错学习。</strong> 集中突击一个主题直到掌握，然后再也不回头，这样学到的知识是孤立的，无法迁移。修正方法：在学习时段内交错不同主题——混合做不同章节、不同学科的题目。这感觉更难，但记忆和迁移效果要好得多。</p>
+<hr/>
+<p><strong>适用于物理之外的通用学习原则</strong></p>
+<p><strong>先找最简单的解释。</strong> 遇到新概念时，先找到最精炼的版本，再逐步增加复杂性。费曼的检验标准：如果你不能简单地解释它，就说明你还没有真正理解它。</p>
+<p><strong>构建模型，而不是收集事实。</strong> 目标不是积累知识点，而是构建一个关于物理世界如何运作的心理模型。事实存在于模型之中——它们因此变得有意义、有联系、可提取。没有模型的事实只是噪音，很快就会消失。</p>
+<p><strong>困惑即信息。</strong> 当你对某件事感到困惑时，这个困惑恰恰指向了你模型中某个具体的缺口。大多数学生把困惑当作要逃避的障碍。把它当作一个诊断信号——它告诉你接下来该学什么。</p>
+<p><strong>没感觉准备好了也要自我测试。</strong> 你对自己是否掌握某个知识的信心，并不能准确预测你是否真的掌握了。在感觉还没准备好之前就进行自我测试，虽然不舒服，但准确得多——而且测试本身就能加速学习。</p>
+<p><strong>教就是学。</strong> 向别人（或向自己大声）解释一个概念，会暴露你自己都没意识到的漏洞。这就是费曼技巧，它之所以有效，是因为解释迫使你去生成知识，而不仅仅是识别知识。</p>
+<p><strong>睡眠不是可有可无的。</strong> 记忆巩固发生在睡眠期间。物理考试前通宵熬夜适得其反——你在巩固上失去的，比你多学几小时获得的更多。规律的睡眠比额外的学习时间更重要。</p>
+<p>关于学习，你还有什么想对我说的吗？</p>
+<hr/>
+<p>有些事情值得一说，它们不太容易归入具体的学习技巧。</p>
+<hr/>
+<p><strong>情感层面是真实存在的，而且被低估了</strong></p>
+<p>物理有一种让聪明人觉得自己很笨的能力。这不是一个缺陷——而是这门学科的一个特征。那些概念真的很难，是人类几百年来最敏锐的头脑积累起来的。当你感到迷茫、反应迟钝时，你不是在经历个人失败。你是在经历物理本身。</p>
+<p>长期学有所成的学生，不是那些从不感到困惑的人。而是那些培养出对困惑的耐受性的人——他们能在“不知道”的状态中待下去，而不恐慌、不放弃。这种耐受性本身就是一种可以习得的技能，它会迁移到你将来尝试的每一项艰难的智力活动中。</p>
+<p><strong>动机是一种资源，而不是人格特质</strong></p>
+<p>你会有几周觉得学习毫不费力，也会有几周觉得翻开课本都像不可能完成的任务。这两种状态都是正常的。错误在于把动机当成你天生有或者没有的东西——好像有些人天生就有干劲，有些人就没有。</p>
+<p>动机更多是跟随行动而来，而不是先于行动。开始是最难的部分。一个有用的启发：先承诺只学 10 分钟。绝大多数情况下，一旦开始学习，你就会继续学下去。心理阻力几乎全部集中在从“不学习”切换到“学习”的那个过渡阶段。</p>
+<p>另外：保护你学习的原因。你为什么想理解量子力学？把那个答案放在你能看到的地方。在艰难的日子里，你需要能触达它。</p>
+<p><strong>比较的危险</strong></p>
+<p>在社群中学习——同学、论坛、学习小组——是有价值的。但比较是有害的。别人比你更快地理解某个东西，这几乎不会告诉你任何有用的信息。学习速度因先前基础、睡眠、压力和其他几十个因素而差异巨大。唯一值得做的比较，是今天的你和三个月前的你。</p>
+<p><strong>深度知识是慢慢建立的，这没关系</strong></p>
+<p>有一种文化压力——尤其是在网上——要快速学习。“30 天学会量子力学。”这种压力基本上是有害的。物理领域最深刻的理解，来自数月乃至数年间反复回到同一个想法，每次都能看到新的东西。</p>
+<p>费曼还是研究生时理解电磁学，当教授时理解得不一样，当他需要教给大一新生时又理解得更不一样。理解在不断深化。物理就是这样运作的。抵达一个最终、完全的理解不是目标——目标是与材料保持一种活的关系，这种关系会不断发展。</p>
+<p><strong>你实际上在构建什么</strong></p>
+<p>学习物理，首要目标不是积累关于宇宙的事实，尽管你会积累很多。你实际上在构建的是一种特定的思维方式——精确、量化、舒适地处理抽象、无情地区分你知道什么和仅仅相信什么。</p>
+<p>这种思维方式不会只停留在物理内部。它会改变你阅读论证的方式，你评估主张的方式，你在与波函数或哈密顿量毫无关系的领域里处理问题的方式。物理学家那种“这意味着什么？”以及“我怎么知道这是错的？”的提问习惯，是一个人所能拥有的、最广泛有用的认知工具之一。</p>
+<p><strong>最后一件事</strong></p>
+<p>在这段旅程中的某个时刻——很可能不止一次——你会经历一个瞬间：你一直在苦苦挣扎的东西突然变得清晰。不只是智力上的清晰，而是一种“感受到”的清晰——方程不再是符号，而成了对某个真实事物的描述，那个事物你能用心眼看见。</p>
+<p>那些时刻值千金。它们就是物理学家之所以成为物理学家的原因。继续走下去，直到你也拥有几个这样的时刻。那时你就会明白，为什么这一切的困难是值得的。</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="backlinks"><h3>反向链接</h3><ul id="list-2" class="overflow"><li><a href="../学业/How-study" class="internal">物理学习策略</a></li><li><a href="../学业/Thinking--models-and-methods" class="internal">物理学思维模型与方法</a></li><li><a href="../学业/about-computer" class="internal">物理研究者的计算机与AI知识需求</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://breakclouds.com">主站 breakclouds.com</a></li><li><a href="https://github.com/hanyushuai-tech">GitHub</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript.js" type="module" data-persist="true"></script></html>

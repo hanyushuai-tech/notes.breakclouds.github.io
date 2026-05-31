@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>001</title><meta charset="utf-8"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Yushuai's Notes"/><meta property="og:title" content="001"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="001"/><meta name="twitter:description" content="视频内容专业总结 本视频围绕微分方程的基本概念、物理应用及其深层次含义展开，旨在帮助观众建立完整且深入的理解框架，兼顾大局观与具体实例细节。 关键内容概述 微分方程的重要性 自牛顿以来，物理定律主要通过微分方程表达，这种数学“语言”已经超越物理学领域，成为描述世界变化规律的关键工具。掌握微分方程有助于从全新角度观察自然和社会现象。 微分方程基本类型 常微分方程（ODE）：包含单一自变量（通常为时间），描述有限个变量随时间的变化。 偏微分方程（PDE）：涉及多个自变量，常用于描述空间上连续介质的变化，如固体内部的温度场、流体速度场等。 视频聚焦常微分方程，尤其是描述动态系统时最常见的时间变量情形..."/><meta property="og:description" content="视频内容专业总结 本视频围绕微分方程的基本概念、物理应用及其深层次含义展开，旨在帮助观众建立完整且深入的理解框架，兼顾大局观与具体实例细节。 关键内容概述 微分方程的重要性 自牛顿以来，物理定律主要通过微分方程表达，这种数学“语言”已经超越物理学领域，成为描述世界变化规律的关键工具。掌握微分方程有助于从全新角度观察自然和社会现象。 微分方程基本类型 常微分方程（ODE）：包含单一自变量（通常为时间），描述有限个变量随时间的变化。 偏微分方程（PDE）：涉及多个自变量，常用于描述空间上连续介质的变化，如固体内部的温度场、流体速度场等。 视频聚焦常微分方程，尤其是描述动态系统时最常见的时间变量情形..."/><meta property="og:image:alt" content="视频内容专业总结 本视频围绕微分方程的基本概念、物理应用及其深层次含义展开，旨在帮助观众建立完整且深入的理解框架，兼顾大局观与具体实例细节。 关键内容概述 微分方程的重要性 自牛顿以来，物理定律主要通过微分方程表达，这种数学“语言”已经超越物理学领域，成为描述世界变化规律的关键工具。掌握微分方程有助于从全新角度观察自然和社会现象。 微分方程基本类型 常微分方程（ODE）：包含单一自变量（通常为时间），描述有限个变量随时间的变化。 偏微分方程（PDE）：涉及多个自变量，常用于描述空间上连续介质的变化，如固体内部的温度场、流体速度场等。 视频聚焦常微分方程，尤其是描述动态系统时最常见的时间变量情形..."/><meta property="og:image" content="https://notes.breakclouds.com/static/og-image.png"/><meta property="og:image:url" content="https://notes.breakclouds.com/static/og-image.png"/><meta name="twitter:image" content="https://notes.breakclouds.com/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="notes.breakclouds.com"/><meta property="og:url" content="https://notes.breakclouds.com/Differential-equations/001"/><meta property="twitter:url" content="https://notes.breakclouds.com/Differential-equations/001"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="视频内容专业总结 本视频围绕微分方程的基本概念、物理应用及其深层次含义展开，旨在帮助观众建立完整且深入的理解框架，兼顾大局观与具体实例细节。 关键内容概述 微分方程的重要性 自牛顿以来，物理定律主要通过微分方程表达，这种数学“语言”已经超越物理学领域，成为描述世界变化规律的关键工具。掌握微分方程有助于从全新角度观察自然和社会现象。 微分方程基本类型 常微分方程（ODE）：包含单一自变量（通常为时间），描述有限个变量随时间的变化。 偏微分方程（PDE）：涉及多个自变量，常用于描述空间上连续介质的变化，如固体内部的温度场、流体速度场等。 视频聚焦常微分方程，尤其是描述动态系统时最常见的时间变量情形..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRTpcXENsYXVkZUNvZGVcXG9ic2lkaWFuLXNpdGVcXHF1YXJ0elxcY29tcG9uZW50c1xcc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://notes.breakclouds.com/index.xml"/></head><body data-slug="Differential-equations/001"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Yushuai's Notes</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索些什么" placeholder="搜索些什么"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-3" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Differential-equations/">Differential equations</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>001</a></div></nav><h1 class="article-title">001</h1><p show-comma="true" class="content-meta"><time datetime="2026-05-31T03:51:01.000Z">2026年5月31日</time><span>32分钟阅读</span></p></div></div><article class="popover-hint"><h3 id="视频内容专业总结">视频内容专业总结<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#视频内容专业总结" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>本视频围绕<strong>微分方程</strong>的基本概念、物理应用及其深层次含义展开，旨在帮助观众建立完整且深入的理解框架，兼顾大局观与具体实例细节。</p>
+<hr/>
+<h3 id="关键内容概述">关键内容概述<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#关键内容概述" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>
+<p><strong>微分方程的重要性</strong><br/>
+自牛顿以来，物理定律主要通过微分方程表达，这种数学“语言”已经超越物理学领域，成为描述世界变化规律的关键工具。掌握微分方程有助于从全新角度观察自然和社会现象。</p>
+</li>
+<li>
+<p><strong>微分方程基本类型</strong></p>
+<ul>
+<li><strong>常微分方程（ODE）</strong>：包含单一自变量（通常为时间），描述有限个变量随时间的变化。</li>
+<li><strong>偏微分方程（PDE）</strong>：涉及多个自变量，常用于描述空间上连续介质的变化，如固体内部的温度场、流体速度场等。<br/>
+视频聚焦常微分方程，尤其是描述动态系统时最常见的时间变量情形。</li>
+</ul>
+</li>
+<li>
+<p><strong>经典物理中的微分方程实例</strong></p>
+<ul>
+<li>抛物线运动中，重力加速度为常数 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">9.8</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>，对应简单的二阶常微分方程：<br/>
+<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8623em;vertical-align:-0.1944em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6679em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord">¨</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span><br/>
+通过两次积分求解位置函数 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span>，积分常数由初始速度和位置确定。</li>
+<li>行星运动中，重力不再是常数，而是与距离平方成反比，体现出加速度依赖于位置的复杂相互作用。</li>
+</ul>
+</li>
+<li>
+<p><strong>摆的运动与微分方程</strong><br/>
+摆的角度 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span> 关于时间的变化体现了谐振动，但仅在小角度近似下才为简单正弦波。<br/>
+实际摆动方程为：<br/>
+<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9313em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9313em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1667em;"><span class="mord">¨</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7475em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1257em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9313em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.0556em;"><span class="mord">˙</span></span></span></span></span></span></span></span></span></span><br/>
+其中，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">L</span></span></span></span> 是摆长，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span></span></span></span> 是阻尼系数（空气阻力等）。</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span> 表示角加速度始终与角度方向相反，保证了摆的回摆性质。</li>
+<li>非线性正弦项使得大角度运动偏离标准简谐运动，导致运动周期和波形发生变化。</li>
+<li>阻尼项导致能量耗散，运动轨迹逐步向稳定平衡点收敛。</li>
+</ul>
+</li>
+<li>
+<p><strong>状态空间与相图</strong><br/>
+为研究系统演化，将角度 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span> 和角速度 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9313em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9313em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.0556em;"><span class="mord">˙</span></span></span></span></span></span></span></span></span></span> 作为二维状态空间坐标，任何时刻摆的状态即对应空间中的一点。</p>
+<ul>
+<li>微分方程转化为向量场，状态空间中的每个点有一个切线向量(即该点状态变化率)。</li>
+<li>轨迹体现系统从初始条件出发随时间的演变路径。</li>
+<li>通过改变参数（如阻尼 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span></span></span></span>），可以直观观察系统稳定性和行为的变化。</li>
+</ul>
+</li>
+<li>
+<p><strong>多维系统与相空间</strong><br/>
+例如，三体问题在三维空间中涉及<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">18</span></span></span></span>维相空间。</p>
+<ul>
+<li>维度数随自由度增加呈指数上升，使得直观可视化困难。</li>
+<li>相空间及其流（phase flow）成为理解复杂动态的核心工具。</li>
+</ul>
+</li>
+<li>
+<p><strong>系统稳定性与固定点</strong></p>
+<ul>
+<li>固定点（如摆的静止或倒立平衡点）是状态空间中状态不变的点。</li>
+<li>稳定性考察固定点附近轨迹是收敛还是发散，是判断系统动态性质的重要指标。</li>
+</ul>
+</li>
+<li>
+<p><strong>微分方程在非物理领域的应用：感情模型</strong></p>
+<ul>
+<li>以恋爱关系为例，两人相互作用可用类似微分方程描述，反映情感动荡的“摆动”性质。</li>
+<li>情感波动的周期性与摆的振荡有数学上的对应关系，阻尼项对应感情趋于淡漠的过程。</li>
+<li>体现数学模型跨学科的通用性和洞察力。</li>
+</ul>
+</li>
+<li>
+<p><strong>数值解法与计算模拟</strong></p>
+<ul>
+<li>由于复杂微分方程往往无解析解，只能通过数值解法逼近真实解。</li>
+<li>基本思路是将连续变化离散为有限小的时间步长 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span></span>，基于当前状态计算下一状态。</li>
+<li>简单的 Python 代码例子展示了如何迭代计算 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span>，步骤越小，结果越精确。</li>
+<li>高级数值方法可更好权衡计算效率与精度。</li>
+</ul>
+</li>
+<li>
+<p><strong>混沌理论的限制</strong></p>
+<ul>
+<li>小的初始条件差异可导致极端不同的系统轨迹（敏感依赖初始值）。</li>
+<li>三体问题是科学史上的著名混沌系统示例。</li>
+<li>限制了预测的长期有效性，但同时说明复杂性可以被数学框架捕获。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h3 id="时间线结构化梳理">时间线结构化梳理<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#时间线结构化梳理" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>时间区间</th><th>内容概述</th></tr></thead><tbody><tr><td>00:00:04-00:01:31</td><td>微分方程定义与分类介绍，物理上变化描述的重要性</td></tr><tr><td>00:02:04-00:04:24</td><td>抛物线运动中重力加速度方程及其积分求解方法</td></tr><tr><td>00:04:27-00:05:29</td><td>引入位置相关力，复杂相互作用与二阶微分方程概念</td></tr><tr><td>00:06:04-00:09:31</td><td>摆的非线性振动方程，物理意义与阻尼效应</td></tr><tr><td>00:10:31-00:16:24</td><td>状态空间二维向量场表示与轨迹分析</td></tr><tr><td>00:17:03-00:19:40</td><td>多维空间（例：三体问题）、相空间定义及其物理学背景</td></tr><tr><td>00:19:41-00:22:44</td><td>稳定点、相空间流及非物理领域（情感动力学）的实例与对比</td></tr><tr><td>00:23:18-00:25:56</td><td>数值解法思想，Python编程演示基本迭代求解</td></tr><tr><td>00:25:58-00:26:52</td><td>混沌理论简介，初始条件敏感性与长期预测的局限</td></tr></tbody></table></div>
+<hr/>
+<h3 id="重要数学公式表">重要数学公式表<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#重要数学公式表" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>变量/公式</th><th>含义</th></tr></thead><tbody><tr><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8623em;vertical-align:-0.1944em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6679em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord">¨</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></td><td>重力加速度的常微分方程</td></tr><tr><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></td><td>摆角度与弧长关系</td></tr><tr><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9313em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9313em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1667em;"><span class="mord">¨</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7475em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1257em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9313em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.0556em;"><span class="mord">˙</span></span></span></span></span></span></span></span></span></span></td><td>阻尼摆的运动微分方程</td></tr><tr><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6594em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1806em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4811em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.1406em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.88em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.88em" viewBox="0 0 400000 1944" preserveAspectRatio="xMinYMin slice"><path d="M983 90
+l0 -0
+c4,-6.7,10,-10,18,-10 H400000v40
+H1013.1s-83.4,268,-264.1,840c-180.7,572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7
+s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744
+c-10,12,-21,25,-33,39s-32,39,-32,39c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30
+c26.7,-32.7,52,-63,76,-91s52,-60,52,-60s208,722,208,722
+c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,-658.5
+c53.7,-170.3,84.5,-266.8,92.5,-289.5z
+M1001 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6594em;"><span></span></span></span></span></span></span></span></span></td><td>小角度简谐摆动周期</td></tr></tbody></table></div>
+<hr/>
+<h3 id="关键术语与定义">关键术语与定义<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#关键术语与定义" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>术语</th><th>定义</th></tr></thead><tbody><tr><td>微分方程（ODE）</td><td>涉及单一自变量的函数及其导数的方程</td></tr><tr><td>偏微分方程（PDE）</td><td>涉及多个自变量函数及其偏导数的方程</td></tr><tr><td>状态空间</td><td>用于描述系统所有可能状态的多维空间</td></tr><tr><td>向量场</td><td>在状态空间中定义的每点对应变化率的向量集合</td></tr><tr><td>相空间</td><td>描述位置与动量的状态空间，特别用于哈密顿力学体系</td></tr><tr><td>稳定点</td><td>系统状态不变，且附近轨迹能回归该点的状态</td></tr><tr><td>阻尼</td><td>系统能量逐渐损失的效应，如空气阻力</td></tr><tr><td>混沌</td><td>对初始条件极度敏感，导致长期轨迹不可预测的动态行为</td></tr></tbody></table></div>
+<hr/>
+<h3 id="主要结论与洞察">主要结论与洞察<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#主要结论与洞察" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>微分方程是理解物理和其他自然现象动态的关键工具</strong>，但多数情况下难以找到解析解。</li>
+<li><strong>通过状态空间和向量场可视化分析，能更深入理解系统行为和稳定性</strong>，胜过仅仅依赖公式。</li>
+<li><strong>数值方法是解决实际复杂微分方程的必要手段</strong>，尤其借助计算机模拟加速迭代。</li>
+<li><strong>微分方程的研究不仅限于物理，还能用于解释情感等社会现象，显示其跨学科影响力。</strong></li>
+<li><strong>混沌现象表明即使数学模型完备，现实预测仍存在根本不确定性，反映自然的复杂和多样。</strong></li>
+</ul>
+<hr/>
+<p>本视频为理解微分方程从基础理论到实际应用提供了清晰而丰富的视角，为后续深入学习奠定坚实基础。</p>
+<p>Taking a quote from Stephen Strogatz, since Newton, mankind has come to realize that the laws of physics are always expressed in the language of differential equations. Of course, this language is spoken well beyond the boundaries of physics as well, and being able to speak it and read it adds a new color to how you view the world around you. In the next few videos, I want to give a sort of tour of this topic. The aim is to give a big picture view of what this piece of math is all about, while at the same time being happy to dig into the details of specific examples as they</p>
+<p>come along. I’ll be assuming you know the basics of calculus, like what derivatives and integrals are, and in later videos we’ll need some basic linear algebra, but not too much beyond that. Differential equations arise whenever it’s easier to describe change than absolute amounts. It’s easier to say why population sizes, for example, grow or shrink than it is to describe why they have the particular values they do at some point in time. It may be easier to describe why your love for someone</p>
+<p>is changing than why it happens to be where it is now. In physics, more specifically Newtonian mechanics, motion is often described in terms of force, and force determines acceleration, which is a statement about change. These equations come in two different flavors, ordinary differential equations, or ODEs, involving functions with a single input, often thought of as time, and partial differential equations, or PDEs, dealing with functions that have multiple inputs. Partial differential equations are something we’ll</p>
+<p>be looking at more closely in the next video. You often think of them as involving a whole continuum of values changing with time, like the temperature at every point of a solid body, or the velocity of a fluid at every point in space. Ordinary differential equations, our focus for now, involve only a finite collection of values changing with time. And it doesn’t have to be time per se, your one independent variable could be something else, but things changing with time are the prototypical and most common example of differential equations.</p>
+<p>Physics offers a nice playground for us here, with simple examples to start with, and no shortage of intricacy and nuance as we delve deeper. As a nice warmup, consider the trajectory of something you throw in the air. The force of gravity near the surface of Earth causes things to accelerate downward at 9.8 meters per second per second. Now unpack what that’s really saying. It means if you look at that object free from other forces, and record its velocity at every second, these velocity vectors will accrue an</p>
+<p>additional small downward component of 9.8 meters per second every second, we call this constant 9.8 g for gravity. This is enough to give us an example of a differential equation, albeit a relatively simple one. Focus on the y-coordinate as a function of time. Its derivative gives the vertical component of velocity, whose derivative in turn gives the vertical component of acceleration. For compactness, let’s write the first derivative as y-dot and the second derivative as y-double-dot. Our equation says that y-double-dot is equal to negative g, a simple constant.</p>
+<p>This is one we can solve by integrating, which is essentially working the question backwards. First, to find velocity, you ask, what function has negative g as a derivative? Well, it’s negative g times t, or more specifically, negative gt plus the initial velocity. Notice that there are many functions with this particular derivative, so you have an extra degree of freedom which is determined by an initial condition. Now what function has this as a derivative? It turns out to be negative one-half g times t squared plus that initial velocity</p>
+<p>times t, and again we’re free to add an additional constant without changing the derivative, and that constant is determined by whatever the initial position is. And there you go, we just solved a differential equation, figuring out what a function is based on information about its rate of change. Things get more interesting when the forces acting on a body depend on where that body is. For example, studying the motion of planets, stars, and moons, gravity can no longer be considered a constant.</p>
+<p>Given two bodies, the pole on one of them is in the direction of the other, with a strength inversely proportional to the square of the distance between them. As always, the rate of change of position is velocity, but now the rate of change of velocity, acceleration, is some function of position, so you have this dance between two mutually interacting variables, reminiscent of the dance between the two moving bodies which they describe. This is reflective of the fact that often in differential equations,</p>
+<p>the puzzles you face involve finding a function whose derivative and or higher order derivatives are defined in terms of the function itself. In physics it’s most common to work with second order differential equations, which means the highest derivative you find in this expression is a second derivative. Higher order differential equations would be ones involving third derivatives, fourth derivatives, and so on, puzzles with more intricate clues. The sensation you get when really meditating on one of these</p>
+<p>equations is one of solving an infinite continuous jigsaw puzzle. In a sense, you have to find infinitely many numbers, one for each point in time t, but they’re constrained by a very specific way that these values intertwine with their own rate of change, and the rate of change of that rate of change. To get a feel for what studying these can look like, I want you to take some time digging into a deceptively simple example, a pendulum. How does this angle theta that it makes with the vertical change as a function of time?</p>
+<p>This is often given as an example in introductory physics classes of harmonic motion, meaning it oscillates like a sine wave. More specifically, one with a period of 2 pi times the square root of l over g, where l is the length of the pendulum and g is the strength of gravity. However, these formulas are actually lies, or rather, approximations which only work in the realm of small angles. If you were to go and measure an actual pendulum, what you’d find is that as you pull it out farther, the period is longer than what the high school physics formulas would suggest.</p>
+<p>And when you pull it out really far, this value of theta plotted versus time doesn’t even look like a sine wave anymore. To understand what’s really going on, first things first, let’s set up the differential equation. We’ll measure the position of the pendulum’s weight as a distance x along this arc, and if the angle theta we care about is measured in radians, we can write x as l times theta, where l is the length of the pendulum. As usual, gravity pulls down with an acceleration of g,</p>
+<p>but because the pendulum constrains the motion of this mass, we have to look at the component of this acceleration in the direction of motion. A little geometry exercise for you is to show that this little angle here is the same as theta. So the component of gravity in the direction of motion opposite this angle will be negative g times sine of theta. Here we’re considering theta to be positive when the pendulum is swung to the right, and negative when it’s swung to the left. This minus sign in the acceleration indicates that it’s</p>
+<p>always pointed in the opposite direction from displacement. So what we have is that the second derivative of x, the acceleration, is negative g times sine of theta. As always, it’s nice to do a quick gut check that our formula makes physical sense. When theta is zero, sine of zero is zero, so there’s no acceleration in the direction of movement. When theta is 90 degrees, sine of theta is 1, so the acceleration is the same as it would be for freefall. Alright, that checks out. And because x is L times theta, that means the second</p>
+<p>derivative of theta is negative g over L times sine of theta. To be a little more realistic, let’s add in a term to account for the air resistance, which maybe we model as being proportional to the velocity. We’ll write this as negative mu times theta dot, where mu is some constant that encapsulates all the air resistance and friction and such that determines how quickly the pendulum loses energy. Now this, my friends, is a particularly juicy differential equation. It’s not easy to solve, but it’s not so hard that we can’t</p>
+<p>reasonably get some meaningful understanding out of it. At first glance, you might think that the sine function you see here relates to the sine wave pattern for the pendulum. Ironically, though, what you’ll eventually find is that the opposite is true. The presence of the sine in this equation is precisely why real pendulums don’t oscillate with a sine wave pattern. If that sounds odd, consider the fact that here, the sine function is taking theta as an input, but in the approximate solution you might see in a physics class,</p>
+<p>theta itself is oscillating as the output of a sine function. Clearly something fishy is afoot. One thing I like about this example is that, even though it’s comparatively simple, it exposes an important truth about differential equations that you need to grapple with. They’re really freaking hard to solve. In this case, if we remove that dampening term, we can just barely write down an analytic solution, but it’s hilariously complicated. It involves all these functions you’ve probably never heard of,</p>
+<p>written in terms of integrals and weird inverse integral problems. When you step back, presumably the reason for finding a solution is to then be able to make computations and build an understanding for whatever dynamics you’re studying. In this case, those questions have been punted off to figuring out how to compute, and more importantly, understand, these new functions. And more often, like if we add back in that dampening term, there’s not a known way to write down an exact analytic solution.</p>
+<p>Well, for any hard problem you could just define a new function to be the answer of that problem, heck, even name it after yourself if you want, but again, that’s pointless unless it leads you to being able to make computations and build understanding. So instead, in the study of differential equations, we often do a sort of short circuit, and skip the actual solution part, since it’s unattainable, and go straight to building understanding and making computations from the equations alone.</p>
+<p>Let me walk through what that might look like with a pendulum. What do you hold in your head, or what visualization can you get some software to pull up for you, to understand the many possible ways that a pendulum, governed by these laws, might evolve depending on its starting conditions? You might be tempted to try imagining the graph of theta vs. t, and somehow interpreting how this slope, position, and curvature all interrelate with each other. However, what will turn out to be both easier and more general is to</p>
+<p>start by visualizing all possible states in a two-dimensional plane. What I mean by the state of the pendulum is that you can describe it with two numbers, the angle and the angular velocity. You can freely change either one of those two values without necessarily changing the other, but the acceleration is purely a function of those two values. So each point of this two-dimensional plane fully describes the pendulum at any given moment. You might think of these as all possible initial conditions of that pendulum.</p>
+<p>If you know the initial angle and the angular velocity, that’s enough to predict how the system will evolve as time moves forward. If you haven’t worked with them before, these sorts of diagrams can take a little getting used to. What you’re looking at now, this inward spiral, is a fairly typical trajectory for our pendulum, so take a moment to think carefully about what is being represented. Notice how at the start, as theta decreases, theta dot, the y-coordinate, gets more negative.</p>
+<p>Which makes sense, because the pendulum moves faster in the leftward direction as it approaches the bottom. Keep in mind, even though the velocity vector on this pendulum is pointed to the left, the value of that velocity is always being represented by the vertical component of our space. It’s important to remind yourself that this state space is an abstract thing, and is distinct from the physical space where the pendulum itself lives and moves. Since we’re modeling this as losing some of its energy to air resistance,</p>
+<p>this trajectory spirals inward, meaning the peak velocity and peak displacement each go down a bit with each swing. Our point is, in a sense, attracted to the origin, where theta and theta dot both equal 0. With this space, we can visualize a differential equation as a vector field. Here, let me show you what I mean. The pendulum state is a vector, theta, theta dot. Maybe you think of that as an arrow from the origin, or maybe you think of it as a point. What matters is that it has two coordinates, each a function of time.</p>
+<p>Taking the derivative of that vector gives you its rate of change, the direction and speed that it will tend to move in this diagram. That derivative is a new vector, theta dot theta double dot, which we visualize as being attached to the relevant point in space. Take a moment to interpret what this is saying. The first component for this rate of change vector is theta dot, which is also a coordinate in our space. The higher up we are in the diagram, the more the point tends to move to the right,</p>
+<p>and the lower we are, the more it tends to move to the left. The vertical component is theta double dot, which our differential equation lets us rewrite entirely in terms of theta and theta dot itself. In other words, the first derivative of our state vector is some function of that vector itself, with most of the intricacy tied up in that second coordinate. Doing the same at all points of this space will show how that state tends to change from any position. As is typical with vector fields, we artificially scale down the vectors when</p>
+<p>we draw them to prevent clutter, but use color to loosely indicate magnitude. Notice we’ve effectively broken up a single second-order equation into a system of two first-order equations. You might even give theta dot a different name, to emphasize that we’re really thinking of two separate values, intertwined via this mutual effect they have on one another’s rate of change. This is a common trick in the study of differential equations. Instead of thinking about higher order changes of a single value,</p>
+<p>we often prefer to think of the first derivative of vector values. In this form, we have a wonderful visual way to think about what solving the equation means. As our system evolves from some initial state, our point in this space will move along some trajectory in such a way that at every moment, the velocity of that point matches the vector from this field. And again, keep in mind, this velocity is not the same thing as the physical velocity of the pendulum, it’s a more abstract rate of change,</p>
+<p>encoding the rates of change for both theta and theta dot. You might find it fun to pause for a moment and think through what exactly some of these trajectory lines say about the possible ways the pendulum evolves from different starting conditions. For example, in regions where theta dot is quite high, the vectors guide the point to travel to the right quite a ways before settling down into an inward spiral. This corresponds to a pendulum with a high enough initial velocity that it fully rotates around several times before settling into a decaying back and forth.</p>
+<p>Having a little more fun? When I tweak this air resistance term, mu, say increasing it, you can immediately see how this will result in trajectories that spiral inward faster, which is to say the pendulum slows down faster. That’s obvious when I call it the air resistance term, but imagine that you saw these equations out of context, not knowing that they described a pendulum. It’s not obvious just looking at them that increasing this value of mu means the system as a whole tends towards some attracting state faster.</p>
+<p>So getting some software to draw these vector fields for you can be a great way to build an intuition for how they behave. What’s wonderful is that any system of ordinary differential equations can be described by a vector field like this, so it’s a very general way to get a feel for them. Usually, though, they have many more dimensions. For example, consider the famous three-body problem, which is to predict how three masses in three-dimensional space evolve if they act on each other with gravity, and if you know their initial positions</p>
+<p>and velocities. Each mass has three coordinates describing its position, and three more describing its momentum. So the system has 18 degrees of freedom in total, and hence an 18-dimensional space of possible states. It’s a bizarre thought, isn’t it? A single point meandering through an 18-dimensional space that we cannot visualize, obediently taking steps through time based on whatever vector it happens to be sitting on from moment to moment, completely encoding the positions and the momenta of the three masses we see in ordinary, physical 3D space.</p>
+<p>In practice, you can reduce the number of dimensions here by taking advantage of the symmetries of your setup, but the point that more degrees of freedom results in higher dimensional state spaces remains the same. In math, we often call a space like this a phase space. You’ll hear me use that term broadly for spaces encoding all kinds of states of changing systems, but you should know that in the context of physics, especially Hamiltonian mechanics, the term is often reserved for a more special case,</p>
+<p>namely a space whose axes represent position and momentum. So a physicist would agree that the 18-dimensional space describing the three-body problem is a phase space, but they might ask that we make a couple of modifications to our pendulum setup for it to properly deserve the term. For those of you who just watched the block collision video, the planes we worked with there would be called phase spaces by math folk, though a physicist might prefer other terminology. Just know that the specific meaning may depend on your context.</p>
+<p>It may seem like a simple idea, depending on how well indoctrinated you are to modern ways of thinking about math, but it’s worth keeping in mind that it took humanity quite a while to really embrace thinking of dynamics spatially like this, especially when the dimensions get very large. In his book Chaos, the author James Glick describes phase space as, “One of the most powerful inventions of modern science”. One reason its powerful is that you can ask questions, not just about a single initial condition but about a whole spectrum of initial states.</p>
+<p>The collection of all possible trajectories is reminiscent of a moving fluid. So we call it phase flow. To take one example of why phase flow is a fruitful idea, consider the question of stability. The origin of our space corresponds to the pendulum standing still, and so does this point over here, representing when the pendulum is perfectly balanced upright. These are the so-called fixed points of our system, and one natural question to ask is whether or not they’re stable, that is, will tiny nudges to the system result in a state that tends back towards that</p>
+<p>fixed point, or away from it? Physical intuition for the pendulum makes the answer here kind of obvious, but how would you think about stability just looking at the equations, say if they arose in some completely different less intuitive context? We’ll go over how to compute the answers to questions like this in following videos, and the intuition for the relevant computations are guided heavily by the thought of looking at small regions in space around a fixed point, and asking whether the flow tends to contract or expand.</p>
+<p>And speaking of attraction and stability, let’s take a brief side-step to talk about love. The Strogatz quote that I mentioned earlier comes from a whimsical column in the New York Times on the mathematics of modelling affection, an example well worth pilfering to illustrate that we’re not just talking about physics here. Imagine you’ve been flirting with someone, but there’s been some frustrating inconsistency to how mutual your affection seems, and perhaps during a moment when you turn your attention towards physics</p>
+<p>to keep your mind off the romantic turmoil, mulling over the broken-up pendulum equations, you suddenly understand the on-again-off-again dynamics of your flirtation. You’ve noticed that your own affection tends to increase when your companion seems interested in you, but decrease when they seem colder. That is, the rate of change for your love is proportional to their feelings for you. But this sweetheart of yours is precisely the opposite, strangely attracted to you when you seem uninterested,</p>
+<p>but turned off once you seem too keen. The phase space for these equations looks very similar to the center part of your pendulum diagram. The two of you will go back and forth between affection and repulsion in an endless cycle. A metaphor of pendulum swings in your feelings would not just be apt, but mathematically verified. In fact, if your partner’s feelings were further slowed when they feel themselves too in love, let’s say out of a fear of being made vulnerable, we’d have a term matching the friction in the pendulum,</p>
+<p>and you too would be destined to an inward spiral towards mutual ambivalence. I hear wedding bells already. The point is that two very different-seeming laws of dynamics, one from physics, involving a single variable, and another from, uh, chemistry, with two variables, actually have a very similar structure, easier to recognize when you’re looking at the phase diagram. Most notably, even though the equations are different, for example there’s no sine function in the romance equations, the phase space exposes an underlying similarity nevertheless.</p>
+<p>In other words, you’re not just studying a pendulum right now, the tactics you develop to study one case have a tendency to transfer to many others. Okay, so phase diagrams are a nice way to build understanding, but what about actually computing the answer to our equation? One way to do this is to essentially simulate what the universe would do, but using finite time steps instead of the infinitesimals and limits defining calculus. The basic idea is that if you’re at some point in this phase diagram,</p>
+<p>take a step based on the vector you’re sitting on for a small time step, delta t. Specifically, take a step equal to delta t times that vector. As a reminder, in drawing these vector fields, the magnitude for each vector has been artificially scaled down to prevent clutter. When you do this repeatedly, your final location will be an approximation of theta t, where t is the sum of all those time steps. If you think about what’s being shown right now, though, and what that would imply for the pendulum’s movement,</p>
+<p>you’d probably agree that this is grossly inaccurate. But that’s only because the time step delta t of 0.5 is way too big. If we turned it down, say to 0.01, you can get a much more accurate approximation, it just takes more repeated steps is all. In this case, computing theta of 10 requires 1000 little steps. Luckily, we live in a world with computers, so repeating a simple task 1000 times is as simple as articulating that task with a programming language. In fact, let’s finish things off by writing a little</p>
+<p>python program that computes theta of t for us. What it has to do is make use of the differential equation, which returns the second derivative of theta as a function of theta and theta dot. You start off by defining two variables, theta and theta dot, each in terms of some initial conditions. In this case I’ll have theta start at pi thirds, which is 60 degrees, and theta dot start at 0. Next, write a loop that corresponds to taking many little time steps between 0 and time t, each of size delta t, which I’m setting here to be 0.01.</p>
+<p>In each step of this loop, increase theta by theta dot times delta t, and increase theta dot by theta double dot times delta t, where theta double dot can be computed based on the differential equation. After all these little time steps, simply return the value of theta. This is called solving a differential equation numerically. Numerical methods can get way more sophisticated and intricate than this to better balance the tradeoff between accuracy and efficiency, but this loop gives the basic idea.</p>
+<p>So even though it sucks that we can’t always find exact solutions, there are still meaningful ways to study differential equations in the face of this inability. In the following videos, we’ll look at several methods for finding exact solutions when it’s possible, but one theme I’d like to focus on is how these exact solutions can also help us to study the more general, unsolvable cases. But it gets worse. Just as there’s a limit to how far exact analytic solutions can get us,</p>
+<p>one of the great fields to have emerged in the last century, chaos theory, has exposed that there are further limits on how well we can use these systems for prediction with or without solutions. Specifically, we know that for some systems, small variations to the initial conditions, say the kind due to necessarily imperfect measurements, result in wildly different trajectories. We’ve even built some good understanding for why this happens. The three-body problem, for example, is known to have seeds of chaos within it.</p>
+<p>So looking back at the quote from earlier, it seems almost cruel of the universe to fill its language with riddles that we either can’t solve, or where we know that any solution would be useless for long-term prediction anyway. It is cruel, but then again it should also be reassuring. It gives some hope that the complexity we see in the world around us can be studied somewhere in this math, and that it’s not hidden away in the mismatch between model and reality.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-1" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#视频内容专业总结" data-for="视频内容专业总结">视频内容专业总结</a></li><li class="depth-0"><a href="#关键内容概述" data-for="关键内容概述">关键内容概述</a></li><li class="depth-0"><a href="#时间线结构化梳理" data-for="时间线结构化梳理">时间线结构化梳理</a></li><li class="depth-0"><a href="#重要数学公式表" data-for="重要数学公式表">重要数学公式表</a></li><li class="depth-0"><a href="#关键术语与定义" data-for="关键术语与定义">关键术语与定义</a></li><li class="depth-0"><a href="#主要结论与洞察" data-for="主要结论与洞察">主要结论与洞察</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://breakclouds.com">主站 breakclouds.com</a></li><li><a href="https://github.com/hanyushuai-tech">GitHub</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript.js" type="module" data-persist="true"></script></html>

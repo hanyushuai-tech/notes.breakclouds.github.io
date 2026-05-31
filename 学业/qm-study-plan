@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum Mechanics Study Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f11;
+    --bg2: #13151a;
+    --bg3: #1a1d24;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #e8e6df;
+    --muted: #7a7870;
+    --accent: #c9a84c;
+    --accent2: #7eb8c9;
+    --accent3: #9b7ec9;
+    --accent4: #c97e7e;
+    --accent5: #7ec99b;
+    --phase1: #c9a84c;
+    --phase2: #7eb8c9;
+    --phase3: #9b7ec9;
+    --phase4: #c97e7e;
+    --phase5: #7ec99b;
+    --phase6: #c9a84c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Starfield background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 72% 8%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 38% 55%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 42%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 80%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 95% 70%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 90%, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 28% 35%, rgba(201,168,76,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 65% 15%, rgba(126,184,201,0.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 32px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 72px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  h1 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    font-style: italic;
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 5px 14px;
+    border: 1px solid var(--border2);
+    border-radius: 2px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .meta-chip span { color: var(--text); }
+
+  /* Overview bar */
+  .overview {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    margin-bottom: 72px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .overview-item {
+    padding: 14px 10px 12px;
+    background: var(--bg2);
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .overview-item:hover { background: var(--bg3); }
+
+  .ov-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .ov-label {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+
+  /* Phase sections */
+  .phase {
+    margin-bottom: 60px;
+    scroll-margin-top: 24px;
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .phase-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-size: 26px;
+    font-weight: 400;
+    flex: 1;
+  }
+
+  .phase-duration {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    border: 1px solid;
+    flex-shrink: 0;
+  }
+
+  .phase-intro {
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 24px;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+
+  /* Subject cards */
+  .subjects {
+    display: grid;
+    gap: 12px;
+  }
+
+  .subject {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 22px 24px;
+    border-left: 3px solid;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .subject:hover {
+    background: var(--bg3);
+  }
+
+  .subject-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .subject-name {
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .subject-weeks {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  .subject-goal {
+    color: var(--muted);
+    font-size: 14.5px;
+    font-style: italic;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .resources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .resource {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    padding: 3px 9px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border2);
+    border-radius: 2px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  .resource.primary {
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text);
+  }
+
+  .topics {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .topic-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Phase color theming */
+  .p1 { --pc: var(--phase1); }
+  .p2 { --pc: var(--phase2); }
+  .p3 { --pc: var(--phase3); }
+  .p4 { --pc: var(--phase4); }
+  .p5 { --pc: var(--phase5); }
+  .p6 { --pc: var(--phase6); }
+
+  .phase-duration { border-color: var(--pc); color: var(--pc); }
+  .subject { border-left-color: var(--pc); }
+  .phase .ov-num { color: var(--pc); }
+
+  .topic-tag {
+    background: color-mix(in srgb, var(--pc) 12%, transparent);
+    color: color-mix(in srgb, var(--pc) 80%, var(--text));
+    border: 1px solid color-mix(in srgb, var(--pc) 25%, transparent);
+  }
+
+  /* Milestones */
+  .milestone {
+    margin: 28px 0;
+    padding: 16px 20px;
+    background: color-mix(in srgb, var(--pc) 6%, var(--bg2));
+    border: 1px solid color-mix(in srgb, var(--pc) 20%, transparent);
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .milestone-icon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--pc);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .milestone-text {
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .milestone-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Timeline bar */
+  .timeline-bar {
+    display: flex;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 72px;
+    gap: 2px;
+  }
+
+  .tbar-seg {
+    border-radius: 2px;
+    height: 100%;
+  }
+
+  /* Tips section */
+  .tips {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .tips-title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: var(--muted);
+  }
+
+  .tip-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .tip {
+    padding: 18px 20px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .tip strong {
+    display: block;
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  /* Total summary */
+  .summary {
+    margin-top: 48px;
+    padding: 28px 32px;
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .sum-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .sum-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 32px; }
+    .overview { grid-template-columns: repeat(3, 1fr); }
+    .tip-grid { grid-template-columns: 1fr; }
+    .summary { grid-template-columns: 1fr 1fr; }
+    .phase-header { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="eyebrow">Personalized Study Plan</div>
+    <h1>From College Physics<br>to <em>Graduate Quantum</em></h1>
+    <p class="subtitle">A structured path from your current foundation to intermediate graduate-level quantum mechanics — studied full-time.</p>
+    <div class="meta-row">
+      <div class="meta-chip">Starting point: <span>Some college math/physics</span></div>
+      <div class="meta-chip">Pace: <span>30+ hrs / week</span></div>
+      <div class="meta-chip">Format: <span>Mixed resources</span></div>
+      <div class="meta-chip">Total: <span>~22–26 months</span></div>
+    </div>
+  </header>
+
+  <!-- Timeline bar -->
+  <div class="timeline-bar">
+    <div class="tbar-seg" style="flex:2; background: var(--phase1);"></div>
+    <div class="tbar-seg" style="flex:2.5; background: var(--phase2);"></div>
+    <div class="tbar-seg" style="flex:3; background: var(--phase3);"></div>
+    <div class="tbar-seg" style="flex:3.5; background: var(--phase4);"></div>
+    <div class="tbar-seg" style="flex:3; background: var(--phase5);"></div>
+    <div class="tbar-seg" style="flex:3; background: var(--phase6);"></div>
+  </div>
+
+  <!-- Overview strip -->
+  <div class="overview">
+    <a class="overview-item p1" href="#p1">
+      <div class="ov-num">1</div>
+      <div class="ov-label">Math<br>Foundations</div>
+    </a>
+    <a class="overview-item p2" href="#p2">
+      <div class="ov-num">2</div>
+      <div class="ov-label">Classical<br>Physics</div>
+    </a>
+    <a class="overview-item p3" href="#p3">
+      <div class="ov-num">3</div>
+      <div class="ov-label">Advanced<br>Math</div>
+    </a>
+    <a class="overview-item p4" href="#p4">
+      <div class="ov-num">4</div>
+      <div class="ov-label">Intro<br>Quantum</div>
+    </a>
+    <a class="overview-item p5" href="#p5">
+      <div class="ov-num">5</div>
+      <div class="ov-label">Intermediate<br>Quantum</div>
+    </a>
+    <a class="overview-item p6" href="#p6">
+      <div class="ov-num">6</div>
+      <div class="ov-label">Graduate<br>Quantum</div>
+    </a>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase p1" id="p1">
+    <div class="phase-header">
+      <div class="phase-num">PHASE 01</div>
+      <div class="phase-title">Mathematical Foundations</div>
+      <div class="phase-duration">~3 months</div>
+    </div>
+    <p class="phase-intro">Everything in quantum mechanics is expressed in mathematics. Before touching physics, you need fluency in calculus, linear algebra, and differential equations — these are not optional prerequisites, they are the language of the field.</p>
+
+    <div class="subjects">
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Calculus (Single & Multivariable)</div>
+          <div class="subject-weeks">5–6 weeks</div>
+        </div>
+        <div class="subject-goal">Master derivatives, integrals, partial derivatives, gradients, and line/surface integrals. These appear constantly in every equation you'll encounter.</div>
+        <div class="resources">
+          <span class="resource primary">MIT OCW 18.01 + 18.02</span>
+          <span class="resource">Stewart Calculus (textbook)</span>
+          <span class="resource">Paul's Online Math Notes</span>
+          <span class="resource">3Blue1Brown Essence of Calculus</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">limits & continuity</span>
+          <span class="topic-tag">integration techniques</span>
+          <span class="topic-tag">partial derivatives</span>
+          <span class="topic-tag">gradient & divergence</span>
+          <span class="topic-tag">vector calculus</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Linear Algebra</div>
+          <div class="subject-weeks">4–5 weeks</div>
+        </div>
+        <div class="subject-goal">Quantum mechanics IS linear algebra. Wavefunctions are vectors, operators are matrices, measurements are eigenvalues. This is not optional background — it is QM's native language.</div>
+        <div class="resources">
+          <span class="resource primary">3Blue1Brown Essence of Linear Algebra</span>
+          <span class="resource primary">Gilbert Strang MIT OCW 18.06</span>
+          <span class="resource">Axler — Linear Algebra Done Right</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">vector spaces</span>
+          <span class="topic-tag">matrices & determinants</span>
+          <span class="topic-tag">eigenvalues & eigenvectors</span>
+          <span class="topic-tag">inner products</span>
+          <span class="topic-tag">diagonalization</span>
+          <span class="topic-tag">Hermitian matrices</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Ordinary Differential Equations</div>
+          <div class="subject-weeks">3–4 weeks</div>
+        </div>
+        <div class="subject-goal">The Schrödinger equation is a differential equation. You need to solve 1st and 2nd order ODEs, understand separation of variables, and recognize standard forms.</div>
+        <div class="resources">
+          <span class="resource primary">MIT OCW 18.03</span>
+          <span class="resource">Tenenbaum & Pollard (textbook)</span>
+          <span class="resource">Paul's Online Notes — ODEs</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">first-order ODEs</span>
+          <span class="topic-tag">second-order linear ODEs</span>
+          <span class="topic-tag">separation of variables</span>
+          <span class="topic-tag">series solutions</span>
+          <span class="topic-tag">Sturm–Liouville theory</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-icon">◆ MILESTONE</div>
+      <div class="milestone-text"><strong>End of Phase 1:</strong> Solve eigenvalue problems by hand, compute multivariable integrals, and solve 2nd-order linear ODEs with boundary conditions. Work 20+ problems in each area before moving on.</div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase p2" id="p2">
+    <div class="phase-header">
+      <div class="phase-num">PHASE 02</div>
+      <div class="phase-title">Classical Physics</div>
+      <div class="phase-duration">~3.5 months</div>
+    </div>
+    <p class="phase-intro">Quantum mechanics is best understood as a radical departure from classical physics — but you need to know what it's departing from. Classical mechanics, electromagnetism, and waves all re-appear in quantum in transformed guises.</p>
+
+    <div class="subjects">
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Classical Mechanics</div>
+          <div class="subject-weeks">5–6 weeks</div>
+        </div>
+        <div class="subject-goal">Newtonian mechanics first, then the Lagrangian and Hamiltonian formulations — the Hamiltonian is directly promoted to an operator in QM. This reformulation of mechanics is QM's structural blueprint.</div>
+        <div class="resources">
+          <span class="resource primary">Kleppner & Kolenkow — Introduction to Mechanics</span>
+          <span class="resource primary">Taylor — Classical Mechanics</span>
+          <span class="resource">Susskind & Hrabovsky — Theoretical Minimum</span>
+          <span class="resource">MIT OCW 8.01</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">Newton's laws</span>
+          <span class="topic-tag">conservation laws</span>
+          <span class="topic-tag">Lagrangian mechanics</span>
+          <span class="topic-tag">Hamiltonian mechanics</span>
+          <span class="topic-tag">phase space</span>
+          <span class="topic-tag">central force problems</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Waves & Oscillations</div>
+          <div class="subject-weeks">3–4 weeks</div>
+        </div>
+        <div class="subject-goal">Wave phenomena — interference, diffraction, superposition — are the classical analogues of quantum behavior. Understanding them makes wave-particle duality intuitive rather than mysterious.</div>
+        <div class="resources">
+          <span class="resource primary">French — Vibrations & Waves (MIT Introductory Series)</span>
+          <span class="resource">Crawford — Waves (Berkeley Series)</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">simple harmonic motion</span>
+          <span class="topic-tag">wave equation</span>
+          <span class="topic-tag">superposition & interference</span>
+          <span class="topic-tag">Fourier analysis intro</span>
+          <span class="topic-tag">standing waves</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Electromagnetism</div>
+          <div class="subject-weeks">5–6 weeks</div>
+        </div>
+        <div class="subject-goal">E&M introduces field theory, vector calculus in physics, and Maxwell's equations — essential context for QED and for understanding the electromagnetic Hamiltonian in QM.</div>
+        <div class="resources">
+          <span class="resource primary">Griffiths — Introduction to Electrodynamics</span>
+          <span class="resource">MIT OCW 8.02</span>
+          <span class="resource">Purcell — Electricity & Magnetism</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">Coulomb & Gauss laws</span>
+          <span class="topic-tag">Maxwell's equations</span>
+          <span class="topic-tag">electromagnetic waves</span>
+          <span class="topic-tag">vector potential</span>
+          <span class="topic-tag">gauge transformations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-icon">◆ MILESTONE</div>
+      <div class="milestone-text"><strong>End of Phase 2:</strong> Derive the Lagrangian and Hamiltonian for a simple system, solve a central-force orbit problem, and state Maxwell's equations from memory. Solve problems from Kleppner & Kolenkow chapters 7–10.</div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase p3" id="p3">
+    <div class="phase-header">
+      <div class="phase-num">PHASE 03</div>
+      <div class="phase-title">Advanced Mathematics</div>
+      <div class="phase-duration">~4 months</div>
+    </div>
+    <p class="phase-intro">Graduate quantum mechanics demands a level of mathematical maturity beyond undergraduate physics. Complex analysis, partial differential equations, and formal linear algebra (operator theory) must become second nature.</p>
+
+    <div class="subjects">
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Complex Analysis</div>
+          <div class="subject-weeks">4–5 weeks</div>
+        </div>
+        <div class="subject-goal">Contour integration and residue theorem are used throughout QFT and scattering theory. Complex numbers are already native to QM — complex analysis deepens that relationship.</div>
+        <div class="resources">
+          <span class="resource primary">Brown & Churchill — Complex Variables</span>
+          <span class="resource">Needham — Visual Complex Analysis</span>
+          <span class="resource">MIT OCW 18.04</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">analytic functions</span>
+          <span class="topic-tag">Cauchy's theorem</span>
+          <span class="topic-tag">residue theorem</span>
+          <span class="topic-tag">contour integration</span>
+          <span class="topic-tag">branch cuts</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Partial Differential Equations</div>
+          <div class="subject-weeks">4–5 weeks</div>
+        </div>
+        <div class="subject-goal">The Schrödinger equation is a PDE. You need separation of variables in multiple coordinate systems, Fourier series/transforms, and boundary value problems to solve real QM problems.</div>
+        <div class="resources">
+          <span class="resource primary">Haberman — Applied Partial Differential Equations</span>
+          <span class="resource">Strauss — PDEs: An Introduction</span>
+          <span class="resource">MIT OCW 18.303</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">heat & wave equations</span>
+          <span class="topic-tag">Fourier series</span>
+          <span class="topic-tag">Fourier transforms</span>
+          <span class="topic-tag">spherical coordinates</span>
+          <span class="topic-tag">Legendre polynomials</span>
+          <span class="topic-tag">spherical harmonics</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Mathematical Methods for Physics</div>
+          <div class="subject-weeks">5–6 weeks</div>
+        </div>
+        <div class="subject-goal">A comprehensive pass through the mathematical toolkit physicists actually use: special functions, tensors, group theory basics, and Green's functions.</div>
+        <div class="resources">
+          <span class="resource primary">Arfken, Weber & Harris — Mathematical Methods for Physicists</span>
+          <span class="resource">Boas — Mathematical Methods in the Physical Sciences</span>
+          <span class="resource">Riley, Hobson & Bence</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">special functions</span>
+          <span class="topic-tag">Hermite polynomials</span>
+          <span class="topic-tag">Laguerre polynomials</span>
+          <span class="topic-tag">Green's functions</span>
+          <span class="topic-tag">tensor analysis</span>
+          <span class="topic-tag">variational calculus</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Probability & Statistics</div>
+          <div class="subject-weeks">2–3 weeks</div>
+        </div>
+        <div class="subject-goal">QM is fundamentally probabilistic. Expectation values, probability distributions, and the Born rule all demand statistical fluency.</div>
+        <div class="resources">
+          <span class="resource primary">Dekking et al. — Modern Introduction to Probability</span>
+          <span class="resource">Khan Academy Probability</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">probability distributions</span>
+          <span class="topic-tag">expectation values</span>
+          <span class="topic-tag">Gaussian distribution</span>
+          <span class="topic-tag">uncertainty & variance</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-icon">◆ MILESTONE</div>
+      <div class="milestone-text"><strong>End of Phase 3:</strong> Evaluate a contour integral using residues, solve the heat equation on a finite interval with Fourier series, and expand a function in spherical harmonics. You should now feel comfortable opening Griffiths QM and reading it fluently.</div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase p4" id="p4">
+    <div class="phase-header">
+      <div class="phase-num">PHASE 04</div>
+      <div class="phase-title">Introductory Quantum Mechanics</div>
+      <div class="phase-duration">~4 months</div>
+    </div>
+    <p class="phase-intro">This is the standard undergraduate quantum mechanics sequence. By the end you will understand wavefunctions, quantization, the hydrogen atom, spin, and perturbation theory — the conceptual core of QM.</p>
+
+    <div class="subjects">
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Foundations & Wave Mechanics</div>
+          <div class="subject-weeks">4–5 weeks</div>
+        </div>
+        <div class="subject-goal">The postulates of QM, the wavefunction and its interpretation, the Schrödinger equation, and your first exact solutions — the infinite square well, the harmonic oscillator, the free particle.</div>
+        <div class="resources">
+          <span class="resource primary">Griffiths — Introduction to QM (Ch. 1–3)</span>
+          <span class="resource">Susskind — Quantum Mechanics: The Theoretical Minimum</span>
+          <span class="resource">MIT OCW 8.04 (Barton Zwiebach lectures)</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">Born rule</span>
+          <span class="topic-tag">infinite square well</span>
+          <span class="topic-tag">harmonic oscillator</span>
+          <span class="topic-tag">free particle & wave packets</span>
+          <span class="topic-tag">uncertainty principle</span>
+          <span class="topic-tag">Dirac notation intro</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Formalism: Hilbert Space & Operators</div>
+          <div class="subject-weeks">3–4 weeks</div>
+        </div>
+        <div class="subject-goal">The rigorous mathematical structure of QM: states as vectors, observables as Hermitian operators, measurements as eigenvalue problems, and commutators as the heart of uncertainty.</div>
+        <div class="resources">
+          <span class="resource primary">Griffiths — Introduction to QM (Ch. 3)</span>
+          <span class="resource">Sakurai — Modern QM (Ch. 1) (preview)</span>
+          <span class="resource">MIT OCW 8.05</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">Hermitian operators</span>
+          <span class="topic-tag">commutators</span>
+          <span class="topic-tag">generalized uncertainty</span>
+          <span class="topic-tag">Dirac notation</span>
+          <span class="topic-tag">position & momentum representations</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">3D Quantum Mechanics & the Hydrogen Atom</div>
+          <div class="subject-weeks">4–5 weeks</div>
+        </div>
+        <div class="subject-goal">The hydrogen atom is QM's crown jewel — it produces exact analytical solutions and introduces angular momentum, spherical harmonics, and quantum numbers. Every chemist's orbital picture comes from this.</div>
+        <div class="resources">
+          <span class="resource primary">Griffiths — Introduction to QM (Ch. 4)</span>
+          <span class="resource">MIT OCW 8.04 problem sets</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">3D Schrödinger eq.</span>
+          <span class="topic-tag">angular momentum operators</span>
+          <span class="topic-tag">spherical harmonics</span>
+          <span class="topic-tag">radial equation</span>
+          <span class="topic-tag">hydrogen energy levels</span>
+          <span class="topic-tag">quantum numbers n, l, m</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Spin & Identical Particles</div>
+          <div class="subject-weeks">3–4 weeks</div>
+        </div>
+        <div class="subject-goal">Spin has no classical analogue — it's purely quantum. Pauli matrices, spinors, addition of angular momentum, and the Pauli exclusion principle emerge here and pervade all of modern physics.</div>
+        <div class="resources">
+          <span class="resource primary">Griffiths — Introduction to QM (Ch. 4–5)</span>
+          <span class="resource">Townsend — A Modern Approach to QM</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">spin-1/2</span>
+          <span class="topic-tag">Pauli matrices</span>
+          <span class="topic-tag">spinors</span>
+          <span class="topic-tag">addition of angular momentum</span>
+          <span class="topic-tag">Clebsch–Gordan coefficients</span>
+          <span class="topic-tag">fermions vs bosons</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-icon">◆ MILESTONE</div>
+      <div class="milestone-text"><strong>End of Phase 4:</strong> Solve all end-of-chapter problems in Griffiths chapters 1–5. Derive the hydrogen energy spectrum, compute expectation values and uncertainties, and apply first-order perturbation theory to a simple system. You have now completed the equivalent of an undergraduate QM course.</div>
+    </div>
+  </div>
+
+  <!-- PHASE 5 -->
+  <div class="phase p5" id="p5">
+    <div class="phase-header">
+      <div class="phase-num">PHASE 05</div>
+      <div class="phase-title">Intermediate Quantum Mechanics</div>
+      <div class="phase-duration">~4 months</div>
+    </div>
+    <p class="phase-intro">This phase bridges undergraduate and graduate quantum mechanics. Topics become more abstract, more powerful, and more mathematically demanding. Perturbation theory, scattering, and the path integral formulation are introduced.</p>
+
+    <div class="subjects">
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Perturbation Theory</div>
+          <div class="subject-weeks">4–5 weeks</div>
+        </div>
+        <div class="subject-goal">Almost no real QM problem has an exact solution. Perturbation theory is the primary tool for approximation — time-independent and time-dependent variants, degenerate cases, and the variational method.</div>
+        <div class="resources">
+          <span class="resource primary">Griffiths — Introduction to QM (Ch. 6–9)</span>
+          <span class="resource">Sakurai — Modern QM (Ch. 5)</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">non-degenerate perturbation theory</span>
+          <span class="topic-tag">degenerate perturbation theory</span>
+          <span class="topic-tag">fine structure of hydrogen</span>
+          <span class="topic-tag">Zeeman effect</span>
+          <span class="topic-tag">variational method</span>
+          <span class="topic-tag">WKB approximation</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Time-Dependent QM & Transitions</div>
+          <div class="subject-weeks">3–4 weeks</div>
+        </div>
+        <div class="subject-goal">How quantum systems evolve and transition between states under time-varying potentials. Fermi's golden rule, selection rules, and the theory of emission/absorption of radiation.</div>
+        <div class="resources">
+          <span class="resource primary">Griffiths — Introduction to QM (Ch. 9–11)</span>
+          <span class="resource">Sakurai — Modern QM (Ch. 5)</span>
+          <span class="resource">MIT OCW 8.06</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">time-dependent perturbation theory</span>
+          <span class="topic-tag">Fermi's golden rule</span>
+          <span class="topic-tag">selection rules</span>
+          <span class="topic-tag">spontaneous emission</span>
+          <span class="topic-tag">adiabatic theorem</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Scattering Theory</div>
+          <div class="subject-weeks">3–4 weeks</div>
+        </div>
+        <div class="subject-goal">How particles scatter off potentials — the theoretical foundation of all particle physics experiments. The Born approximation, partial wave analysis, and the S-matrix are central tools.</div>
+        <div class="resources">
+          <span class="resource primary">Griffiths — Introduction to QM (Ch. 11)</span>
+          <span class="resource">Sakurai — Modern QM (Ch. 6)</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">cross sections</span>
+          <span class="topic-tag">Born approximation</span>
+          <span class="topic-tag">partial wave analysis</span>
+          <span class="topic-tag">phase shifts</span>
+          <span class="topic-tag">optical theorem</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Density Matrices & Mixed States</div>
+          <div class="subject-weeks">2–3 weeks</div>
+        </div>
+        <div class="subject-goal">Pure states are an idealization. Real systems involve statistical mixtures, entanglement with environments, and decoherence — described by the density matrix formalism.</div>
+        <div class="resources">
+          <span class="resource primary">Sakurai — Modern QM (Ch. 3)</span>
+          <span class="resource">Nielsen & Chuang — Quantum Computation (Ch. 2)</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">density operator</span>
+          <span class="topic-tag">pure vs mixed states</span>
+          <span class="topic-tag">partial trace</span>
+          <span class="topic-tag">decoherence</span>
+          <span class="topic-tag">quantum entanglement formalism</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-icon">◆ MILESTONE</div>
+      <div class="milestone-text"><strong>End of Phase 5:</strong> Compute second-order energy corrections via perturbation theory, apply Fermi's golden rule to a transition rate problem, calculate a differential cross-section using the Born approximation, and describe a two-qubit system with a density matrix.</div>
+    </div>
+  </div>
+
+  <!-- PHASE 6 -->
+  <div class="phase p6" id="p6">
+    <div class="phase-header">
+      <div class="phase-num">PHASE 06</div>
+      <div class="phase-title">Graduate Quantum Mechanics</div>
+      <div class="phase-duration">~4 months</div>
+    </div>
+    <p class="phase-intro">This is graduate-level QM as taught in first-year PhD programs. The emphasis shifts to deep formalism, symmetries, and the connections to quantum field theory. Sakurai's textbook is the canonical reference.</p>
+
+    <div class="subjects">
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Sakurai: Fundamental Concepts & Quantum Dynamics</div>
+          <div class="subject-weeks">5–6 weeks</div>
+        </div>
+        <div class="subject-goal">A complete reformulation of QM in the most general abstract language — Dirac notation, transformation theory, the three pictures (Schrödinger, Heisenberg, interaction) and propagators.</div>
+        <div class="resources">
+          <span class="resource primary">Sakurai & Napolitano — Modern Quantum Mechanics</span>
+          <span class="resource">MIT OCW 8.321 (Graduate QM I)</span>
+          <span class="resource">Weinberg — Lectures on Quantum Mechanics</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">bra-ket formalism (deep)</span>
+          <span class="topic-tag">Schrödinger picture</span>
+          <span class="topic-tag">Heisenberg picture</span>
+          <span class="topic-tag">interaction picture</span>
+          <span class="topic-tag">propagators</span>
+          <span class="topic-tag">coherent states</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Symmetries in Quantum Mechanics</div>
+          <div class="subject-weeks">4–5 weeks</div>
+        </div>
+        <div class="subject-goal">Symmetry is the organizing principle of modern physics. Continuous symmetries give conservation laws (Noether); discrete symmetries (parity, time reversal) constrain what interactions are possible. Group theory enters here.</div>
+        <div class="resources">
+          <span class="resource primary">Sakurai — Modern QM (Ch. 4)</span>
+          <span class="resource">Georgi — Lie Algebras in Particle Physics</span>
+          <span class="resource">Wu-Ki Tung — Group Theory in Physics</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">rotational symmetry</span>
+          <span class="topic-tag">SU(2) & SO(3)</span>
+          <span class="topic-tag">parity & time reversal</span>
+          <span class="topic-tag">Noether's theorem</span>
+          <span class="topic-tag">Wigner's theorem</span>
+          <span class="topic-tag">irreducible representations</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Path Integral Formulation</div>
+          <div class="subject-weeks">3–4 weeks</div>
+        </div>
+        <div class="subject-goal">Feynman's path integral is an alternative formulation of QM that generalizes naturally to QFT. It provides deep conceptual insight and powerful computational tools, especially for non-perturbative physics.</div>
+        <div class="resources">
+          <span class="resource primary">Feynman & Hibbs — Quantum Mechanics & Path Integrals</span>
+          <span class="resource">Sakurai — Modern QM (Ch. 2, propagator section)</span>
+          <span class="resource">Zinn-Justin — Quantum Field Theory (intro chapters)</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">sum over histories</span>
+          <span class="topic-tag">Feynman path integral</span>
+          <span class="topic-tag">stationary phase approximation</span>
+          <span class="topic-tag">Euclidean path integral</span>
+          <span class="topic-tag">connection to QFT action</span>
+        </div>
+      </div>
+
+      <div class="subject">
+        <div class="subject-top">
+          <div class="subject-name">Identical Particles & Many-Body QM</div>
+          <div class="subject-weeks">3–4 weeks</div>
+        </div>
+        <div class="subject-goal">Second quantization — the language of quantum field theory — is introduced here. Creation and annihilation operators, the quantum harmonic oscillator re-examined, and the first steps toward quantum field theory.</div>
+        <div class="resources">
+          <span class="resource primary">Sakurai — Modern QM (Ch. 7)</span>
+          <span class="resource">Fetter & Walecka — Quantum Theory of Many-Particle Systems</span>
+          <span class="resource">Altland & Simons — Condensed Matter Field Theory (intro)</span>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">second quantization</span>
+          <span class="topic-tag">creation & annihilation operators</span>
+          <span class="topic-tag">Fock space</span>
+          <span class="topic-tag">Hartree–Fock method</span>
+          <span class="topic-tag">Bose–Einstein & Fermi–Dirac statistics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-icon">◆ MILESTONE</div>
+      <div class="milestone-text"><strong>End of Phase 6 (Final Goal):</strong> Work through Sakurai chapters 1–7, completing problems at the end of each chapter. Be able to (1) discuss any QM problem in the three pictures, (2) decompose a state under a symmetry group, (3) write and evaluate a simple path integral, and (4) second-quantize the harmonic oscillator. You are now at intermediate graduate QM level.</div>
+    </div>
+  </div>
+
+  <!-- Tips -->
+  <div class="tips">
+    <div class="tips-title">Study principles for this journey</div>
+    <div class="tip-grid">
+      <div class="tip">
+        <strong>Problems over reading</strong>
+        Reading a textbook is not learning physics. For every hour of reading, spend two hours solving problems. If you can't solve the problem, you don't understand the material — yet.
+      </div>
+      <div class="tip">
+        <strong>Don't skip the math</strong>
+        Every time you feel the urge to "accept" a formula and move on, stop. Derive it. The derivation is where the physics lives. Mathematical fluency is not separate from physical understanding.
+      </div>
+      <div class="tip">
+        <strong>Return and re-read</strong>
+        Concepts like the uncertainty principle will seem different after you understand Hilbert space. Schrödinger's equation will feel new after you learn path integrals. Revisiting earlier material is not wasted time — it's consolidation.
+      </div>
+      <div class="tip">
+        <strong>Keep a derivation notebook</strong>
+        Maintain a notebook of every derivation you work through by hand. Date them. Return to them. The act of re-deriving from memory is one of the most effective learning tools in physics.
+      </div>
+      <div class="tip">
+        <strong>Use multiple sources</strong>
+        Every author explains things differently. When something isn't clicking with Griffiths, try Sakurai or Susskind. Different framings reveal different facets of the same idea.
+      </div>
+      <div class="tip">
+        <strong>Phase transitions matter</strong>
+        The jump from Phase 3→4 (entering QM) and 5→6 (entering graduate level) are the hardest transitions. Expect to slow down and feel lost. That discomfort is not failure — it is the sensation of your mental model being rebuilt.
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary">
+    <div>
+      <div class="sum-val">~22</div>
+      <div class="sum-label">months total, full-time pace</div>
+    </div>
+    <div>
+      <div class="sum-val">6</div>
+      <div class="sum-label">phases, each with clear milestone</div>
+    </div>
+    <div>
+      <div class="sum-val">30+</div>
+      <div class="sum-label">hrs/week of focused study</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
